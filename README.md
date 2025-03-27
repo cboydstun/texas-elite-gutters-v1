@@ -18,28 +18,39 @@ This project is a business website built with Next.js 15, TypeScript, and modern
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **State Management**: React Context API / Zustand
-- **Form Handling**: React Hook Form with Zod validation
-- **Testing**: Jest and React Testing Library (TDD approach)
+- **Form Handling**:
+  - React Hook Form for form state management
+  - Zod for schema validation
+  - Custom form components with validation feedback
+- **Testing**:
+  - Jest as the test runner
+  - React Testing Library for component testing
+  - User Event for interaction simulation
+  - TDD (Test-Driven Development) approach
 - **Deployment**: Vercel
 
 ## Project Structure
 
 ```
 texas-elite-gutters-v1/
-├── __tests__/           # Test files following TDD approach
-├── app/                 # Next.js 15 App Router structure
-│   ├── page.tsx         # Home page
-│   ├── gutter-installation/
-│   ├── gutter-cleaning-repairs/
-│   ├── exterior-services/
-│   └── contact/
-├── components/          # Reusable UI components
-│   ├── ui/              # Basic UI components
-│   ├── layout/          # Layout components
-│   └── sections/        # Page section components
-├── lib/                 # Utility functions and shared logic
-├── public/              # Static assets
-└── types/               # TypeScript type definitions
+├── __tests__/                # Test files following TDD approach
+│   ├── components/           # Component tests
+│   │   └── ui/               # UI component tests
+│   └── pages/                # Page tests
+├── src/                      # Source code directory
+│   ├── app/                  # Next.js 15 App Router structure
+│   │   ├── page.tsx          # Home page
+│   │   ├── gutter-installation/
+│   │   ├── gutter-cleaning-repairs/
+│   │   ├── exterior-services/
+│   │   └── contact/
+│   ├── components/           # Reusable UI components
+│   │   ├── ui/               # Basic UI components
+│   │   ├── layout/           # Layout components
+│   │   └── sections/         # Page section components
+│   └── lib/                  # Utility functions and shared logic
+├── public/                   # Static assets
+└── types/                    # TypeScript type definitions
 ```
 
 ## Sitemap
@@ -60,6 +71,23 @@ texas-elite-gutters-v1/
 - **Testimonials**: Customer reviews and testimonials
 - **Service Area Map**: Interactive map showing service coverage areas
 - **Request Quote**: Online quote request functionality
+
+## Implemented Components
+
+The following components have been implemented following TDD principles:
+
+- **Button**: Reusable button component with support for:
+
+  - Primary and secondary variants
+  - Disabled state
+  - Click event handling
+  - Custom styling
+
+- **ContactForm**: Form component with:
+  - React Hook Form integration
+  - Zod schema validation
+  - Error message display
+  - Submission handling
 
 ## Development Workflow
 
@@ -86,12 +114,22 @@ This project follows Test-Driven Development practices:
 3. Implement the minimum code necessary to pass the tests
 4. Refactor while ensuring tests continue to pass
 
+The testing infrastructure includes:
+
+- **Jest**: Test runner and assertion library
+- **React Testing Library**: Component testing with a user-centric approach
+- **User Event**: Simulating user interactions
+- **Custom Test Utilities**: Wrapper for consistent test setup
+
 ```bash
-# Run tests
+# Run all tests
 npm test
 
 # Run tests in watch mode
 npm test -- --watch
+
+# Run tests for a specific component
+npm test -- __tests__/components/ui/Button.test.tsx
 ```
 
 ### Building for Production
