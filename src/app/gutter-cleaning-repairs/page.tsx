@@ -1,0 +1,177 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+
+export default function GutterCleaningRepairs() {
+  return (
+    <div className="flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="w-full relative">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-[#001F33]/80 z-10"></div>
+        <div className="relative h-[400px] w-full">
+          <Image
+            src="/hero-gutter-image.png"
+            alt="Gutter Cleaning and Repair Services"
+            fill
+            priority
+            className="object-cover"
+            style={{ objectPosition: "center 60%" }}
+          />
+        </div>
+
+        {/* Hero Content */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+              Cleaning Out Your Gutters
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
+              Get gutter cleaning services in the San Antonio or Converse, TX
+              area
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link href="/contact" passHref>
+                <Button
+                  variant="secondary"
+                  className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
+                >
+                  Get a Free Quote Today
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="w-full bg-[#FFFFFF] py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              Leaks, rust and corrosion can all impact your gutters, making it
+              hard to protect your property. Luckily, Texas Elite Gutters &amp;
+              Exteriors offers gutter cleaning services in the San Antonio and
+              Converse, TX areas. We'll clean your gutters, removing leaves,
+              sticks and other debris, and flush them to clear out dirt and
+              sediment. Then, we'll remove and dispose of all waste material.
+            </p>
+            <div className="text-center my-8">
+              <a href="tel:210-835-7520" className="inline-block">
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Call 210-835-7520 now for gutter cleaning services
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Detail Section */}
+      <section className="w-full bg-[#5B8DB1]/10 py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            Repairing your damaged gutters
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              For gutter repairs, depend on our professionals. When fixing
+              gutters, we handle things like:
+            </p>
+            <ul className="list-none space-y-4 mb-8">
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Checking for loose gutters, downspouts, parts and leaks
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Stopping gutters from pulling away from your home
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Diverting the flow of downspouts if needed
+                </span>
+              </li>
+            </ul>
+            <p className="text-lg mb-6 leading-relaxed">
+              We'll meet with you in person to assess your gutters and discuss
+              your repair needs. Then, we'll take care of your gutter repairs
+              and recommend steps you can take to stop them from clogging. We'll
+              also provide before and after photos of your project.
+            </p>
+            <div className="text-center mt-8">
+              <Link href="/contact" passHref>
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Contact us for gutter repair services
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="w-full bg-[#001F33] text-[#FFFFFF] py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001F33] to-[#003A5C] opacity-80"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl font-bold mb-6 text-[#C9A357]">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Contact us today for a free quote on your gutter cleaning and repair
+            project.
+          </p>
+          <Link href="/contact" passHref>
+            <Button
+              variant="secondary"
+              className="px-8 py-4 font-bold text-lg shadow-lg"
+            >
+              Get Your Free Quote
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
