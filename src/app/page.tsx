@@ -1,103 +1,353 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="w-full relative">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-[#001F33]/80 z-10"></div>
+        <div className="relative h-[600px] w-full">
+          <Image
+            src="/hero-gutter-image.png"
+            alt="Professional Gutter Installation"
+            fill
+            priority
+            className="object-cover"
+            style={{ objectPosition: "center 30%" }}
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Hero Content */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+              Texas Elite Gutter Cleaning, Repair, and Installation
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
+              Professional gutter installation, cleaning, and repair services in
+              San Antonio, TX. Prevent water damage and protect your investment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link href="/contact" passHref>
+                <Button
+                  variant="secondary"
+                  className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
+                >
+                  Get a Free Quote Today
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-16 w-full">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div className="bg-[#001F33] text-[#C9A357] p-4 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Gutter Installation</h3>
+              <p className="text-gray-600 mb-4">
+                Installing new gutters to protect homes.
+              </p>
+              <Link
+                href="/gutter-installation"
+                className="text-[#C9A357] font-medium hover:text-[#B08A3E] mt-auto"
+              >
+                Learn More
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div className="bg-[#001F33] text-[#C9A357] p-4 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">
+                Gutter Cleaning & Repairs
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Cleaning and maintaining gutters.
+              </p>
+              <Link
+                href="/gutter-cleaning-repairs"
+                className="text-[#C9A357] font-medium hover:text-[#B08A3E] mt-auto"
+              >
+                Learn More
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div className="bg-[#001F33] text-[#C9A357] p-4 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Exterior Services</h3>
+              <p className="text-gray-600 mb-4">
+                Updating the exterior of homes.
+              </p>
+              <Link
+                href="/exterior-services"
+                className="text-[#C9A357] font-medium hover:text-[#B08A3E] mt-auto"
+              >
+                Learn More
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div className="bg-[#001F33] text-[#C9A357] p-4 rounded-full mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Contact Us</h3>
+              <p className="text-gray-600 mb-4">
+                Speak with our professionals about your home.
+              </p>
+              <Link
+                href="/contact"
+                className="text-[#C9A357] font-medium hover:text-[#B08A3E] mt-auto"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Solution Section */}
+      <section className="w-full bg-[#5B8DB1]/10 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4 text-[#C9A357]">
+            Solving Your Gutter Problems
+          </h2>
+          <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
+            Work with our gutter company in the San Antonio or Converse, TX area
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              Does water spill over the sides of your gutters every time it
+              rains? You need a more effective solution for your property.
+              Thankfully, Texas Elite Gutters &amp; Exteriors is here to help in
+              San Antonio and Converse, TX and the surrounding areas. Our gutter
+              company offers comprehensive gutter services, so you can trust us
+              to remove your old gutters and install new gutters and downspouts.
+              With our professionals on the job, you won't have to worry about
+              water on your property.
+            </p>
+            <p className="text-lg mb-8 leading-relaxed">
+              Email us today about your property. We'll provide a free estimate
+              for your project.
+            </p>
+            <div className="text-center">
+              <Link href="/contact" passHref>
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Get Your Free Estimate
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Detail Section */}
+      <section className="w-full py-16 bg-[#FFFFFF]">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            Providing the services you need
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              Updating and maintaining your property starts with calling our
+              professionals. You can depend on our fully insured team for:
+            </p>
+            <ul className="list-none space-y-4 mb-8">
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  <span className="font-semibold text-[#C9A357]">
+                    Gutter services:
+                  </span>{" "}
+                  Installing gutters, downspouts, gutters guards and sealants.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  <span className="font-semibold text-[#C9A357]">
+                    Repair services:
+                  </span>{" "}
+                  Cleaning and repairing clogged or damaged gutters.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  <span className="font-semibold text-[#C9A357]">
+                    Exterior services:
+                  </span>{" "}
+                  Building pergolas, gazebos, patios, fences and decks.
+                </span>
+              </li>
+            </ul>
+            <p className="text-lg mb-6 leading-relaxed">
+              You can also trust us for a variety of exterior repairs, including
+              siding and fascia work. Call{" "}
+              <a
+                href="tel:210-835-7520"
+                className="text-[#C9A357] font-semibold hover:text-[#B08A3E]"
+              >
+                210-835-7520
+              </a>{" "}
+              today to reach out to our locally owned gutter company.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="w-full bg-[#5B8DB1]/10 py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            Learn more about us
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              At Texas Elite Gutters &amp; Exteriors, we always strive to be the
+              best. We choose quality over quantity, and providing excellent
+              customer service and work is our mission. Our tested expertise
+              lies in delivering top-quality gutter services, so you can trust
+              us to keep your property looking its best. Our dedicated team will
+              guarantee the quality, efficiency and consistency of your gutters,
+              improving the look and functionality of your property.
+            </p>
+            <p className="text-lg mb-8 leading-relaxed">
+              You'll see the impact of our experience when we work on your
+              property. Reach out to us today about your home's exterior.
+            </p>
+            <div className="text-center">
+              <Link href="/contact" passHref>
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Contact Us Today
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="w-full bg-[#001F33] text-[#FFFFFF] py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001F33] to-[#003A5C] opacity-80"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl font-bold mb-6 text-[#C9A357]">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Contact us today for a free quote on your gutter installation or
+            repair project.
+          </p>
+          <Link href="/contact" passHref>
+            <Button
+              variant="secondary"
+              className="px-8 py-4 font-bold text-lg shadow-lg"
+            >
+              Get Your Free Quote
+            </Button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

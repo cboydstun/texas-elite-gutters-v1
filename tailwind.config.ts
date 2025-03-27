@@ -10,13 +10,33 @@ const config: Config = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#1E40AF', // Blue color for primary
-                    dark: '#1E3A8A',
+                    DEFAULT: '#001F33', // Deep Navy Blue
+                    dark: '#001525',
+                    light: '#003A5C',
                 },
-                secondary: {
-                    DEFAULT: '#6B7280', // Gray color for secondary
-                    dark: '#4B5563',
+                accent: {
+                    DEFAULT: '#C9A357', // Gold/Bronze
+                    dark: '#B08A3E',
+                    light: '#D9B978',
                 },
+                alert: {
+                    DEFAULT: '#D82F2F', // Bright Red
+                    dark: '#B82222',
+                    light: '#E85555',
+                },
+                gray: {
+                    DEFAULT: '#4A4A4A', // Steel Gray
+                    dark: '#333333',
+                    light: '#6A6A6A',
+                },
+                blue: {
+                    DEFAULT: '#5B8DB1', // Light Blue
+                    dark: '#4A7A9A',
+                    light: '#7AA5C4',
+                },
+                // Add standard colors to ensure they're available
+                white: '#FFFFFF',
+                black: '#000000',
             },
         },
     },

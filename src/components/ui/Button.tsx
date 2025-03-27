@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary";
@@ -17,8 +19,9 @@ export const Button = ({
   const baseStyles = "px-4 py-2 rounded-md font-medium transition-colors";
 
   const variantStyles = {
-    primary: "bg-primary text-white hover:bg-primary-dark",
-    secondary: "bg-white text-primary border border-primary hover:bg-gray-50",
+    primary: "bg-[#001F33] text-[#FFFFFF] hover:bg-[#003A5C]",
+    secondary:
+      "bg-[#C9A357] text-[#FFFFFF] border border-[#B08A3E] hover:bg-[#B08A3E]",
   };
 
   const disabledStyles = disabled ? "opacity-50 cursor-not-allowed" : "";
