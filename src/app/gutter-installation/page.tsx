@@ -76,12 +76,12 @@ export default function GutterInstallation() {
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
               To take care of your gutters in the San Antonio or Converse, TX
-              area, you'll want a professional on the job. Texas Elite Gutters
+              area, you will want a professional on the job. Texas Elite Gutters
               &amp; Exteriors provides the gutter installation services you
-              need. We'll meet with you to go over the full installation
-              process, including a start-to-finish timeline. Then, we'll handle
-              your installation, protecting your home and cleaning up your
-              property as we work.
+              need. We will meet with you to go over the full installation
+              process, including a start-to-finish timeline. Then, we will
+              handle your installation, protecting your home and cleaning up
+              your property as we work.
             </p>
             <div className="text-center my-8">
               <Link href="/contact" passHref>
@@ -161,10 +161,10 @@ export default function GutterInstallation() {
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              After completing your gutter installation services, we'll provide
-              a lifetime warranty of workmanship to guarantee our work and give
-              you peace of mind. We can also install gutter guards or sealant to
-              make maintenance easier.
+              After completing your gutter installation services, we will
+              provide a lifetime warranty of workmanship to guarantee our work
+              and give you peace of mind. We can also install gutter guards or
+              sealant to make maintenance easier.
             </p>
             <div className="text-center mt-8">
               <Link href="/contact" passHref>

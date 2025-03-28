@@ -213,12 +213,12 @@ export default function Home() {
               San Antonio and Converse, TX and the surrounding areas. Our gutter
               company offers comprehensive gutter services, so you can trust us
               to remove your old gutters and install new gutters and downspouts.
-              With our professionals on the job, you won't have to worry about
-              water on your property.
+              With our professionals on the job, you will not have to worry
+              about water on your property.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Email us today about your property. We'll provide a free estimate
-              for your project.
+              Email us today about your property. We will provide a free
+              estimate for your project.
             </p>
             <div className="text-center">
               <Link href="/contact" passHref>
@@ -339,8 +339,8 @@ export default function Home() {
               improving the look and functionality of your property.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              You'll see the impact of our experience when we work on your
-              property. Reach out to us today about your home's exterior.
+              You will see the impact of our experience when we work on your
+              property. Reach out to us today about the exterior of your home.
             </p>
             <div className="text-center">
               <Link href="/contact" passHref>

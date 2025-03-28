@@ -53,7 +53,7 @@ export default function ExteriorServices() {
               Updating Your Property
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
-              We'll handle your pergola building project in the San Antonio or
+              We will handle your pergola building project in the San Antonio or
               Converse, TX area
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -77,7 +77,7 @@ export default function ExteriorServices() {
             <p className="text-lg mb-6 leading-relaxed">
               From pergola building to fence installation projects, Texas Elite
               Gutters &amp; Exteriors does it all in the San Antonio and
-              Converse, TX areas. We'll be glad to upgrade your property.
+              Converse, TX areas. We will be glad to upgrade your property.
             </p>
             <div className="text-center my-8">
               <Link href="/contact" passHref>
@@ -186,12 +186,13 @@ export default function ExteriorServices() {
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              We'll meet with you in person to go over your project and space.
-              Then, we'll create a timeline for your project and manage it from
-              start to finish. We always make sure we're neat and clean when
-              updating spaces and will protect your home and clean up your
-              property, disposing of any waste. Lastly, we'll walk your property
-              with you to make sure you're fully satisfied with our work.
+              We will meet with you in person to go over your project and space.
+              Then, we will create a timeline for your project and manage it
+              from start to finish. We always make sure we are neat and clean
+              when updating spaces and will protect your home and clean up your
+              property, disposing of any waste. Lastly, we will walk your
+              property with you to make sure you are fully satisfied with our
+              work.
             </p>
             <div className="text-center mt-8">
               <Link href="/contact" passHref>

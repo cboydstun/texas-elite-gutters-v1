@@ -78,9 +78,9 @@ export default function GutterCleaningRepairs() {
               Leaks, rust and corrosion can all impact your gutters, making it
               hard to protect your property. Luckily, Texas Elite Gutters &amp;
               Exteriors offers gutter cleaning services in the San Antonio and
-              Converse, TX areas. We'll clean your gutters, removing leaves,
+              Converse, TX areas. We will clean your gutters, removing leaves,
               sticks and other debris, and flush them to clear out dirt and
-              sediment. Then, we'll remove and dispose of all waste material.
+              sediment. Then, we will remove and dispose of all waste material.
             </p>
             <div className="text-center my-8">
               <a href="tel:210-835-7520" className="inline-block">
@@ -161,10 +161,10 @@ export default function GutterCleaningRepairs() {
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              We'll meet with you in person to assess your gutters and discuss
-              your repair needs. Then, we'll take care of your gutter repairs
-              and recommend steps you can take to stop them from clogging. We'll
-              also provide before and after photos of your project.
+              We will meet with you in person to assess your gutters and discuss
+              your repair needs. Then, we will take care of your gutter repairs
+              and recommend steps you can take to stop them from clogging. We
+              will also provide before and after photos of your project.
             </p>
             <div className="text-center mt-8">
               <Link href="/contact" passHref>
