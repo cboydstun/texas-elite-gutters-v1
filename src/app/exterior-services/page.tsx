@@ -1,6 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Exterior Services | Texas Elite Gutters & Exteriors",
+  description:
+    "Professional exterior services in San Antonio and Converse, TX. We build pergolas, gazebos, decks, patios, and install fences to enhance your property.",
+  keywords:
+    "exterior services, pergola building, fence installation, gazebo, deck building, patio construction, San Antonio, Converse, Texas",
+  openGraph: {
+    title: "Exterior Services | Texas Elite Gutters & Exteriors",
+    description:
+      "Professional exterior services in San Antonio and Converse, TX. Pergolas, fences, decks, and more.",
+    url: "https://texaselitegutters.com/exterior-services",
+    siteName: "Texas Elite Gutters & Exteriors",
+    images: [
+      {
+        url: "/hero-gutter-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Exterior Services",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function ExteriorServices() {
   return (

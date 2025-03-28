@@ -1,6 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Texas Elite Gutters & Exteriors | Home",
+  description:
+    "Professional gutter installation, cleaning, and repair services in San Antonio and Converse, TX. Prevent water damage and protect your investment.",
+  keywords:
+    "gutters, gutter installation, gutter cleaning, gutter repairs, San Antonio, Converse, Texas",
+  openGraph: {
+    title: "Texas Elite Gutters & Exteriors | Home",
+    description:
+      "Professional gutter installation, cleaning, and repair services in San Antonio and Converse, TX.",
+    url: "https://texaselitegutters.com",
+    siteName: "Texas Elite Gutters & Exteriors",
+    images: [
+      {
+        url: "/hero-gutter-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Texas Elite Gutters & Exteriors",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (

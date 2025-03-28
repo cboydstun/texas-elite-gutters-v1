@@ -1,6 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gutter Installation Services | Texas Elite Gutters & Exteriors",
+  description:
+    "Professional gutter installation services in San Antonio and Converse, TX. We install seamless gutters to reduce clogs and provide lifetime warranty.",
+  keywords:
+    "gutter installation, seamless gutters, downspout installation, K-style gutters, San Antonio, Converse, Texas",
+  openGraph: {
+    title: "Gutter Installation Services | Texas Elite Gutters & Exteriors",
+    description:
+      "Professional gutter installation services in San Antonio and Converse, TX.",
+    url: "https://texaselitegutters.com/gutter-installation",
+    siteName: "Texas Elite Gutters & Exteriors",
+    images: [
+      {
+        url: "/hero-gutter-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Gutter Installation Services",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function GutterInstallation() {
   return (
