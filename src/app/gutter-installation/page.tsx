@@ -57,7 +57,10 @@ export default function GutterInstallation() {
               Converse, TX area
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link href="/contact" passHref>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
                 <Button
                   variant="secondary"
                   className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
@@ -188,7 +191,10 @@ export default function GutterInstallation() {
             Contact us today for a free quote on your gutter installation
             project.
           </p>
-          <Link href="/contact" passHref>
+          <Link
+            href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+            passHref
+          >
             <Button
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"

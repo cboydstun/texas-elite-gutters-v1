@@ -74,7 +74,10 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
-          <Link href="/contact" passHref>
+          <Link
+            href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+            passHref
+          >
             <Button variant="primary">Get a Quote</Button>
           </Link>
         </div>
@@ -156,7 +159,10 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             </a>
           </div>
           <div className="py-2">
-            <Link href="/contact" passHref>
+            <Link
+              href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+              passHref
+            >
               <Button variant="primary" className="w-full">
                 Get a Quote
               </Button>

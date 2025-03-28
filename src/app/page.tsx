@@ -57,7 +57,10 @@ export default function Home() {
               San Antonio, TX. Prevent water damage and protect your investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link href="/contact" passHref>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
                 <Button
                   variant="secondary"
                   className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
@@ -221,7 +224,10 @@ export default function Home() {
               estimate for your project.
             </p>
             <div className="text-center">
-              <Link href="/contact" passHref>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
                   Get Your Free Estimate
                 </Button>
@@ -364,7 +370,10 @@ export default function Home() {
             Contact us today for a free quote on your gutter installation or
             repair project.
           </p>
-          <Link href="/contact" passHref>
+          <Link
+            href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+            passHref
+          >
             <Button
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"
