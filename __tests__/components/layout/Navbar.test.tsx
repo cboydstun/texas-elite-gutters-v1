@@ -17,8 +17,8 @@ describe("Navbar", () => {
     const installationLinks = screen.getAllByRole("link", {
       name: /gutter installation/i,
     });
-    const cleaningLinks = screen.getAllByRole("link", {
-      name: /gutter cleaning and repairs/i,
+    const servicesLinks = screen.getAllByRole("link", {
+      name: /gutter services/i,
     });
     const exteriorLinks = screen.getAllByRole("link", {
       name: /exterior services/i,
@@ -28,7 +28,7 @@ describe("Navbar", () => {
     // Check that at least one of each link exists
     expect(homeLinks.length).toBeGreaterThan(0);
     expect(installationLinks.length).toBeGreaterThan(0);
-    expect(cleaningLinks.length).toBeGreaterThan(0);
+    expect(servicesLinks.length).toBeGreaterThan(0);
     expect(exteriorLinks.length).toBeGreaterThan(0);
     expect(contactLinks.length).toBeGreaterThan(0);
 
@@ -38,9 +38,9 @@ describe("Navbar", () => {
       "href",
       "/gutter-installation"
     );
-    expect(cleaningLinks[0]).toHaveAttribute(
+    expect(servicesLinks[0]).toHaveAttribute(
       "href",
-      "/gutter-cleaning-repairs"
+      "/gutter-services"
     );
     expect(exteriorLinks[0]).toHaveAttribute("href", "/exterior-services");
     expect(contactLinks[0]).toHaveAttribute("href", "/contact");
@@ -79,9 +79,9 @@ describe("Navbar", () => {
     const quoteButtons = screen.getAllByText(/get a quote/i);
     expect(quoteButtons.length).toBeGreaterThan(0);
 
-    // Find all links to the contact page
+    // Find all links to the booking page
     const contactLinks = screen.getAllByRole("link", { name: /get a quote/i });
     expect(contactLinks.length).toBeGreaterThan(0);
-    expect(contactLinks[0]).toHaveAttribute("href", "/contact");
+    expect(contactLinks[0]).toHaveAttribute("href", "https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true");
   });
 });

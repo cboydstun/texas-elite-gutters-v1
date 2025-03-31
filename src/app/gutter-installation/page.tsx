@@ -65,7 +65,7 @@ export default function GutterInstallation() {
                   variant="secondary"
                   className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
                 >
-                  Get a Free Quote Today
+                  Get a Project Evaluation Today
                 </Button>
               </Link>
             </div>
@@ -199,7 +199,7 @@ export default function GutterInstallation() {
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"
             >
-              Get Your Free Quote
+              Get Your Project Evaluation
             </Button>
           </Link>
         </div>

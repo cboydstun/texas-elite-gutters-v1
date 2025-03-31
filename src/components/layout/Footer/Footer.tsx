@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               Texas Elite Gutters & Exteriors
             </h3>
             <p className="mb-2">
-              Professional gutter installation and repair services
+              Professional gutter installation and gutter services
             </p>
             <p className="mb-4">Serving San Antonio and Converse, TX</p>
             <div className="flex items-center mb-2">
@@ -60,14 +60,6 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   className="hover:text-[#C9A357]"
                 >
                   Gutter Installation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/gutter-cleaning-repairs"
-                  className="hover:text-[#C9A357]"
-                >
-                  Gutter Cleaning
                 </Link>
               </li>
               <li>

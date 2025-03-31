@@ -6,13 +6,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Texas Elite Gutters & Exteriors | Home",
   description:
-    "Professional gutter installation, cleaning, and repair services in San Antonio and Converse, TX. Prevent water damage and protect your investment.",
+    "Professional gutter installation and services in San Antonio and Converse, TX. We install seamless gutters, downspouts, rain barrels, and gutter guards to protect your investment.",
   keywords:
-    "gutters, gutter installation, gutter cleaning, gutter repairs, San Antonio, Converse, Texas",
+    "gutters, gutter installation, gutter services, seamless gutters, downspouts, rain barrels, gutter guards, San Antonio, Converse, Texas",
   openGraph: {
     title: "Texas Elite Gutters & Exteriors | Home",
     description:
-      "Professional gutter installation, cleaning, and repair services in San Antonio and Converse, TX.",
+      "Professional gutter installation and services in San Antonio and Converse, TX. We install seamless gutters, downspouts, rain barrels, and gutter guards.",
     url: "https://texaselitegutters.com",
     siteName: "Texas Elite Gutters & Exteriors",
     images: [
@@ -50,10 +50,10 @@ export default function Home() {
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="container mx-auto px-4 flex flex-col items-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              Texas Elite Gutter Cleaning, Repair, and Installation
+              Texas Elite Gutter Installation & Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
-              Professional gutter installation, cleaning, and repair services in
+              Professional gutter installation and services in
               San Antonio, TX. Prevent water damage and protect your investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -65,7 +65,7 @@ export default function Home() {
                   variant="secondary"
                   className="font-bold px-8 py-4 text-lg transform hover:scale-105 transition-transform duration-200 shadow-lg"
                 >
-                  Get a Free Quote Today
+                  Get a Project Evaluation Today
                 </Button>
               </Link>
             </div>
@@ -125,13 +125,13 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-2">
-                Gutter Cleaning & Repairs
+                Gutter Services
               </h3>
               <p className="text-gray-600 mb-4">
-                Cleaning and maintaining gutters.
+                Seamless gutters, downspouts, rain barrels, and gutter guards.
               </p>
               <Link
-                href="/gutter-cleaning-repairs"
+                href="/gutter-services"
                 className="text-[#C9A357] font-medium hover:text-[#B08A3E] mt-auto"
               >
                 Learn More
@@ -203,25 +203,17 @@ export default function Home() {
       <section className="w-full bg-[#5B8DB1]/10 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4 text-[#C9A357]">
-            Solving Your Gutter Problems
+            End Your Gutter Nightmares Today
           </h2>
           <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
-            Work with our gutter company in the San Antonio or Converse, TX area
+            San Antonio & Converse's trusted gutter specialists since 2010
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Does water spill over the sides of your gutters every time it
-              rains? You need a more effective solution for your property.
-              Thankfully, Texas Elite Gutters &amp; Exteriors is here to help in
-              San Antonio and Converse, TX and the surrounding areas. Our gutter
-              company offers comprehensive gutter services, so you can trust us
-              to remove your old gutters and install new gutters and downspouts.
-              With our professionals on the job, you will not have to worry
-              about water on your property.
+              Tired of watching waterfalls cascade from your gutters during every Texas downpour? Water damage doesn't wait—and neither should you. At Texas Elite Gutters & Exteriors, we transform vulnerable properties into water-resistant fortresses throughout San Antonio, Converse, and surrounding communities. Our team doesn't just replace gutters; we engineer comprehensive drainage solutions tailored to your property's unique needs, eliminating overflows, foundation damage, and landscape erosion once and for all.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Email us today about your property. We will provide a free
-              estimate for your project.
+              Don't let another storm damage your biggest investment. Request your comprehensive property assessment and receive a detailed, no-obligation estimate—absolutely free.
             </p>
             <div className="text-center">
               <Link
@@ -229,7 +221,7 @@ export default function Home() {
                 passHref
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Get Your Free Estimate
+                  Claim Your Free Assessment
                 </Button>
               </Link>
             </div>
@@ -267,28 +259,7 @@ export default function Home() {
                   <span className="font-semibold text-[#C9A357]">
                     Gutter services:
                   </span>{" "}
-                  Installing gutters, downspouts, gutters guards and sealants.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <svg
-                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span className="text-lg">
-                  <span className="font-semibold text-[#C9A357]">
-                    Repair services:
-                  </span>{" "}
-                  Cleaning and repairing clogged or damaged gutters.
+                  Installing seamless gutters, downspouts, rain barrels, and gutter guards.
                 </span>
               </li>
               <li className="flex items-start">
@@ -368,7 +339,7 @@ export default function Home() {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Contact us today for a free quote on your gutter installation or
-            repair project.
+            services project.
           </p>
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
@@ -378,7 +349,7 @@ export default function Home() {
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"
             >
-              Get Your Free Quote
+              Get Your Project Evaluation
             </Button>
           </Link>
         </div>

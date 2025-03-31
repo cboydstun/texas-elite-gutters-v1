@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Texas Elite Gutters & Exteriors",
   description:
-    "Professional gutter installation and repair services in San Antonio and Converse, TX",
+    "Professional gutter installation and gutter services in San Antonio and Converse, TX",
 };
 
 export default function RootLayout({

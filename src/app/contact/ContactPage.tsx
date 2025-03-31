@@ -138,8 +138,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Business Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 4:00 PM</p>
+                    <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                    <p>Saturday: By Appointment Only</p>
                     <p>Sunday: Closed</p>
                   </div>
                 </div>

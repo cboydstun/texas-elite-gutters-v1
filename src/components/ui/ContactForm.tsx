@@ -55,7 +55,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           id="name"
           type="text"
           {...register("name")}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.name && (
           <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -73,7 +73,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           id="email"
           type="email"
           {...register("email")}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -91,7 +91,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           id="phone"
           type="tel"
           {...register("phone")}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
@@ -109,7 +109,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           id="message"
           rows={4}
           {...register("message")}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+          className="mt-1 block w-full rounded-md border-gray-300 bg-white shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.message && (
           <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
