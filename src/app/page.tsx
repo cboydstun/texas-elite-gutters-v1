@@ -206,14 +206,14 @@ export default function Home() {
             End Your Gutter Nightmares Today
           </h2>
           <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
-            San Antonio & Converse's trusted gutter specialists since 2010
+            Trusted Gutter Specialist in San Antonio & Converse since 2010
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Tired of watching waterfalls cascade from your gutters during every Texas downpour? Water damage doesn't wait—and neither should you. At Texas Elite Gutters & Exteriors, we transform vulnerable properties into water-resistant fortresses throughout San Antonio, Converse, and surrounding communities. Our team doesn't just replace gutters; we engineer comprehensive drainage solutions tailored to your property's unique needs, eliminating overflows, foundation damage, and landscape erosion once and for all.
+              Tired of watching waterfalls cascade from your gutters during every Texas downpour? Water damage does not wait—and neither should you. At Texas Elite Gutters & Exteriors, we transform vulnerable properties into water-resistant fortresses throughout San Antonio, Converse, and surrounding communities. Our team does not just replace gutters; we engineer comprehensive drainage solutions tailored to the unique needs of your property, eliminating overflows, foundation damage, and landscape erosion once and for all.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Don't let another storm damage your biggest investment. Request your comprehensive property assessment and receive a detailed, no-obligation estimate—absolutely free.
+              Do not let another storm damage your biggest investment. Request your comprehensive property assessment and receive a detailed, no-obligation estimate—absolutely free.
             </p>
             <div className="text-center">
               <Link
