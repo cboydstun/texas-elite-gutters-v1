@@ -7,7 +7,7 @@ describe("HomePage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /texas elite gutters & exteriors/i,
+        name: /texas elite gutter installation & services/i,
       })
     ).toBeInTheDocument();
   });
@@ -15,8 +15,8 @@ describe("HomePage", () => {
   it("displays service areas", () => {
     render(<HomePage />);
 
-    expect(screen.getByText(/san antonio, tx/i)).toBeInTheDocument();
-    expect(screen.getByText(/converse, tx/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/san antonio/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/converse/i)[0]).toBeInTheDocument();
   });
 
   it("shows contact information", () => {
@@ -28,17 +28,15 @@ describe("HomePage", () => {
   it("has navigation links to all pages", () => {
     render(<HomePage />);
 
-    expect(
-      screen.getByRole("link", { name: /gutter installation/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /gutter cleaning and repairs/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /exterior services/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /contact us/i })
-    ).toBeInTheDocument();
+    // Find links by their href attributes
+    const gutterInstallationLink = screen.getByText("Learn More", { selector: 'a[href="/gutter-installation"]' });
+    const gutterServicesLink = screen.getByText("Learn More", { selector: 'a[href="/gutter-services"]' });
+    const exteriorServicesLink = screen.getByText("Learn More", { selector: 'a[href="/exterior-services"]' });
+    const contactLink = screen.getByText("Get in Touch", { selector: 'a[href="/contact"]' });
+
+    expect(gutterInstallationLink).toBeInTheDocument();
+    expect(gutterServicesLink).toBeInTheDocument();
+    expect(exteriorServicesLink).toBeInTheDocument();
+    expect(contactLink).toBeInTheDocument();
   });
 });

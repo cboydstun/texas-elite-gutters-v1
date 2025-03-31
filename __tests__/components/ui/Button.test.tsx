@@ -7,7 +7,7 @@ describe("Button", () => {
 
     const button = screen.getByRole("button", { name: /click me/i });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveClass("bg-primary");
+    expect(button).toHaveClass("bg-[#001F33]");
     expect(button).not.toBeDisabled();
   });
 
@@ -15,14 +15,14 @@ describe("Button", () => {
     render(<Button variant="primary">Primary</Button>);
 
     const button = screen.getByRole("button", { name: /primary/i });
-    expect(button).toHaveClass("bg-primary text-white");
+    expect(button).toHaveClass("bg-[#001F33] text-[#FFFFFF]");
   });
 
   it("applies secondary variant styles", () => {
     render(<Button variant="secondary">Secondary</Button>);
 
     const button = screen.getByRole("button", { name: /secondary/i });
-    expect(button).toHaveClass("bg-white text-primary border-primary");
+    expect(button).toHaveClass("bg-[#C9A357] text-[#FFFFFF] border");
   });
 
   it("handles click events", async () => {

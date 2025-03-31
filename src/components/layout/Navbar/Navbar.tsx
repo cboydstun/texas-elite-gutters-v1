@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/Button";
 
 interface NavbarProps {
@@ -11,9 +12,15 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { status } = useSession();
+  const isAuthenticated = status === "authenticated";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSignOut = async () => {
+    await signOut({ callbackUrl: '/' });
   };
 
   return (
@@ -66,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           </Link>
         </div>
 
-        {/* Contact Info & Button */}
+        {/* Contact Info & Auth Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="text-[#FFFFFF]">
             <span className="font-bold">Call Us: </span>
@@ -74,11 +81,27 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
+          
+          {isAuthenticated ? (
+            <div className="flex items-center space-x-4">
+              <Link href="/admin" className="text-[#FFFFFF] hover:text-[#C9A357]">
+                Admin Dashboard
+              </Link>
+              <Button variant="secondary" onClick={handleSignOut}>
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <Link href="/login" passHref>
+              <Button variant="secondary">Admin Login</Button>
+            </Link>
+          )}
+          
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
             passHref
           >
-            <Button variant="secondary">Get a Quote</Button>
+            <Button variant="primary">Get a Quote</Button>
           </Link>
         </div>
 
@@ -158,6 +181,31 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
+          {/* Auth links for mobile */}
+          {isAuthenticated ? (
+            <>
+              <Link
+                href="/admin"
+                className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
+              >
+                Admin Dashboard
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2 text-left"
+              >
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
+            >
+              Admin Login
+            </Link>
+          )}
+          
           <div className="py-2">
             <Link
               href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"

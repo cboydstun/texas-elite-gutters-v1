@@ -1,6 +1,17 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 
+// Mock next-auth/react
+jest.mock('next-auth/react', () => ({
+    useSession: jest.fn(() => ({
+        data: null,
+        status: 'unauthenticated',
+    })),
+    signIn: jest.fn(),
+    signOut: jest.fn(),
+    getSession: jest.fn(),
+}));
+
 // Mock Next.js router
 jest.mock('next/router', () => ({
     useRouter: () => ({

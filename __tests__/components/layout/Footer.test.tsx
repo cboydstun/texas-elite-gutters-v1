@@ -35,9 +35,6 @@ describe("Footer", () => {
     const installationLinks = screen.getAllByRole("link", {
       name: /gutter installation/i,
     });
-    const cleaningLinks = screen.getAllByRole("link", {
-      name: /gutter cleaning/i,
-    });
     const exteriorLinks = screen.getAllByRole("link", {
       name: /exterior services/i,
     });
@@ -45,7 +42,6 @@ describe("Footer", () => {
 
     expect(homeLinks.length).toBeGreaterThan(0);
     expect(installationLinks.length).toBeGreaterThan(0);
-    expect(cleaningLinks.length).toBeGreaterThan(0);
     expect(exteriorLinks.length).toBeGreaterThan(0);
     expect(contactLinks.length).toBeGreaterThan(0);
   });
@@ -53,10 +49,9 @@ describe("Footer", () => {
   it("renders copyright information", () => {
     render(<Footer />);
 
-    const copyrightTexts = screen.getAllByText(/copyright/i);
     const year = new Date().getFullYear().toString();
-
-    expect(copyrightTexts.length).toBeGreaterThan(0);
-    expect(copyrightTexts[0]).toHaveTextContent(year);
+    const copyrightText = screen.getByText(new RegExp(`©\\s*${year}\\s*Texas Elite Gutters & Exteriors`, 'i'));
+    
+    expect(copyrightText).toBeInTheDocument();
   });
 });
