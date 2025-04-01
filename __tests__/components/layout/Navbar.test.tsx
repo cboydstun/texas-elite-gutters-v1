@@ -36,12 +36,9 @@ describe("Navbar", () => {
     expect(homeLinks[0]).toHaveAttribute("href", "/");
     expect(installationLinks[0]).toHaveAttribute(
       "href",
-      "/gutter-installation"
+      "/gutter-installation",
     );
-    expect(servicesLinks[0]).toHaveAttribute(
-      "href",
-      "/gutter-services"
-    );
+    expect(servicesLinks[0]).toHaveAttribute("href", "/gutter-services");
     expect(exteriorLinks[0]).toHaveAttribute("href", "/exterior-services");
     expect(contactLinks[0]).toHaveAttribute("href", "/contact");
   });
@@ -82,6 +79,9 @@ describe("Navbar", () => {
     // Find all links to the booking page
     const contactLinks = screen.getAllByRole("link", { name: /get a quote/i });
     expect(contactLinks.length).toBeGreaterThan(0);
-    expect(contactLinks[0]).toHaveAttribute("href", "https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true");
+    expect(contactLinks[0]).toHaveAttribute(
+      "href",
+      "https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true",
+    );
   });
 });

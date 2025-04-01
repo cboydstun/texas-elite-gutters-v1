@@ -1,29 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 // Password validation schema
-const passwordSchema = z.string()
-  .min(8, { message: 'Password must be at least 8 characters' })
+const passwordSchema = z
+  .string()
+  .min(8, { message: "Password must be at least 8 characters" })
   .regex(/^(?=.*[A-Z])(?=.*\d)/, {
-    message: 'Password must contain at least 1 uppercase letter and 1 number'
+    message: "Password must contain at least 1 uppercase letter and 1 number",
   });
 
-const registerSchema = z.object({
-  name: z.string().min(1, { message: 'Name is required' }),
-  email: z.string().email({ message: 'Invalid email format' }),
-  password: passwordSchema,
-  confirmPassword: z.string().min(1, { message: 'Please confirm your password' }),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: 'Passwords do not match',
-  path: ['confirmPassword'],
-});
+const registerSchema = z
+  .object({
+    name: z.string().min(1, { message: "Name is required" }),
+    email: z.string().email({ message: "Invalid email format" }),
+    password: passwordSchema,
+    confirmPassword: z
+      .string()
+      .min(1, { message: "Please confirm your password" }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
 
 type RegisterFormData = z.infer<typeof registerSchema>;
 
@@ -48,10 +53,10 @@ export default function RegisterForm() {
     setSuccess(null);
 
     try {
-      const response = await fetch('/api/v1/register', {
-        method: 'POST',
+      const response = await fetch("/api/v1/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: data.name,
@@ -63,20 +68,20 @@ export default function RegisterForm() {
       const result = await response.json();
 
       if (!response.ok) {
-        setError(result.message || 'Registration failed');
+        setError(result.message || "Registration failed");
         return;
       }
 
-      setSuccess('Registration successful! Redirecting to login...');
+      setSuccess("Registration successful! Redirecting to login...");
       reset();
-      
+
       // Redirect to login page after a short delay
       setTimeout(() => {
-        router.push('/login');
+        router.push("/login");
       }, 2000);
     } catch (error) {
-      setError('An error occurred. Please try again.');
-      console.error('Registration error:', error);
+      setError("An error occurred. Please try again.");
+      console.error("Registration error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -97,13 +102,16 @@ export default function RegisterForm() {
       )}
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-gray-700"
+        >
           Name
         </label>
         <input
           id="name"
           type="text"
-          {...register('name')}
+          {...register("name")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.name && (
@@ -112,13 +120,16 @@ export default function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-gray-700"
+        >
           Email
         </label>
         <input
           id="email"
           type="email"
-          {...register('email')}
+          {...register("email")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.email && (
@@ -127,13 +138,16 @@ export default function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="password"
+          className="block text-sm font-medium text-gray-700"
+        >
           Password
         </label>
         <input
           id="password"
           type="password"
-          {...register('password')}
+          {...register("password")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.password && (
@@ -142,29 +156,34 @@ export default function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="confirmPassword"
+          className="block text-sm font-medium text-gray-700"
+        >
           Confirm Password
         </label>
         <input
           id="confirmPassword"
           type="password"
-          {...register('confirmPassword')}
+          {...register("confirmPassword")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.confirmPassword && (
-          <p className="mt-1 text-sm text-red-600">{errors.confirmPassword.message}</p>
+          <p className="mt-1 text-sm text-red-600">
+            {errors.confirmPassword.message}
+          </p>
         )}
       </div>
 
       <div>
         <Button type="submit" disabled={isSubmitting} className="w-full">
-          {isSubmitting ? 'Creating Account...' : 'Create Account'}
+          {isSubmitting ? "Creating Account..." : "Create Account"}
         </Button>
       </div>
 
       <div className="text-center text-sm">
         <p>
-          Already have an account?{' '}
+          Already have an account?{" "}
           <Link href="/login" className="text-[#C9A357] hover:text-[#B08A3E]">
             Sign in here
           </Link>

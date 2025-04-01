@@ -6,7 +6,7 @@ describe("Footer", () => {
     render(<Footer />);
 
     const businessNames = screen.getAllByText(
-      /texas elite gutters & exteriors/i
+      /texas elite gutters & exteriors/i,
     );
     expect(businessNames.length).toBeGreaterThan(0);
   });
@@ -50,8 +50,10 @@ describe("Footer", () => {
     render(<Footer />);
 
     const year = new Date().getFullYear().toString();
-    const copyrightText = screen.getByText(new RegExp(`©\\s*${year}\\s*Texas Elite Gutters & Exteriors`, 'i'));
-    
+    const copyrightText = screen.getByText(
+      new RegExp(`©\\s*${year}\\s*Texas Elite Gutters & Exteriors`, "i"),
+    );
+
     expect(copyrightText).toBeInTheDocument();
   });
 });

@@ -33,10 +33,10 @@ describe("ContactForm", () => {
     await user.type(screen.getByLabelText(/name/i), "Test User");
     await user.type(screen.getByLabelText(/phone/i), "123-456-7890");
     await user.type(screen.getByLabelText(/message/i), "Test message");
-    
+
     // Fill with invalid email
     await user.type(screen.getByLabelText(/email/i), "invalid-email");
-    
+
     // Submit the form
     await user.click(screen.getByRole("button", { name: /submit/i }));
 
@@ -55,7 +55,7 @@ describe("ContactForm", () => {
     await user.type(screen.getByLabelText(/phone/i), "210-555-1234");
     await user.type(
       screen.getByLabelText(/message/i),
-      "I need gutter installation"
+      "I need gutter installation",
     );
 
     // Submit form

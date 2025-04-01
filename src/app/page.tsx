@@ -53,8 +53,8 @@ export default function Home() {
               Texas Elite Gutter Installation & Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
-              Professional gutter installation and services in
-              San Antonio, TX. Prevent water damage and protect your investment.
+              Professional gutter installation and services in San Antonio, TX.
+              Prevent water damage and protect your investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -124,9 +124,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                Gutter Services
-              </h3>
+              <h3 className="text-xl font-bold mb-2">Gutter Services</h3>
               <p className="text-gray-600 mb-4">
                 Seamless gutters, downspouts, rain barrels, and gutter guards.
               </p>
@@ -210,10 +208,20 @@ export default function Home() {
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Tired of watching waterfalls cascade from your gutters during every Texas downpour? Water damage does not wait—and neither should you. At Texas Elite Gutters & Exteriors, we transform vulnerable properties into water-resistant fortresses throughout San Antonio, Converse, and surrounding communities. Our team does not just replace gutters; we engineer comprehensive drainage solutions tailored to the unique needs of your property, eliminating overflows, foundation damage, and landscape erosion once and for all.
+              Tired of watching waterfalls cascade from your gutters during
+              every Texas downpour? Water damage does not wait—and neither
+              should you. At Texas Elite Gutters & Exteriors, we transform
+              vulnerable properties into water-resistant fortresses throughout
+              San Antonio, Converse, and surrounding communities. Our team does
+              not just replace gutters; we engineer comprehensive drainage
+              solutions tailored to the unique needs of your property,
+              eliminating overflows, foundation damage, and landscape erosion
+              once and for all.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Do not let another storm damage your biggest investment. Request your comprehensive property assessment and receive a detailed, no-obligation estimate—absolutely free.
+              Do not let another storm damage your biggest investment. Request
+              your comprehensive property assessment and receive a detailed,
+              no-obligation estimate—absolutely free.
             </p>
             <div className="text-center">
               <Link
@@ -259,7 +267,8 @@ export default function Home() {
                   <span className="font-semibold text-[#C9A357]">
                     Gutter services:
                   </span>{" "}
-                  Installing seamless gutters, downspouts, rain barrels, and gutter guards.
+                  Installing seamless gutters, downspouts, rain barrels, and
+                  gutter guards.
                 </span>
               </li>
               <li className="flex items-start">

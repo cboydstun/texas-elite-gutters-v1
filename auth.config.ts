@@ -1,19 +1,19 @@
-import type { NextAuthConfig } from 'next-auth';
+import type { NextAuthConfig } from "next-auth";
 
 export const authConfig: NextAuthConfig = {
   pages: {
-    signIn: '/login',
+    signIn: "/login",
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const isOnAdminPage = nextUrl.pathname.startsWith('/admin');
-      
+      const isOnAdminPage = nextUrl.pathname.startsWith("/admin");
+
       if (isOnAdminPage) {
         if (isLoggedIn) return true;
         return false; // Redirect unauthenticated users to login page
       }
-      
+
       return true;
     },
   },

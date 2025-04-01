@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
           message: "Validation error",
           errors: validationResult.error.format(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json(
         { success: false, message: "Invalid credentials" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     if (!isPasswordValid) {
       return NextResponse.json(
         { success: false, message: "Invalid credentials" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
         isAdmin: user.isAdmin,
       },
       process.env.AUTH_SECRET!,
-      { expiresIn: "7d" }
+      { expiresIn: "7d" },
     );
 
     // Return success response with token
@@ -90,14 +90,14 @@ export async function POST(req: NextRequest) {
     if (error instanceof Error && error.message === "Rate limit exceeded") {
       return NextResponse.json(
         { success: false, message: "Rate limit exceeded" },
-        { status: 429 }
+        { status: 429 },
       );
     }
 
     console.error("Login error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

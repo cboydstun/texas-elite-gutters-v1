@@ -77,7 +77,14 @@ export default function GutterServices() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Protect your property with comprehensive gutter solutions from Texas Elite Gutters Exteriors. We provide professional gutter services throughout San Antonio and Converse, TX. Our expert team specializes in installing seamless gutters, downspouts, rain barrels, and gutter guards to create a complete water management system for your home. We focus on quality installations that prevent water damage and protect the foundation of your property, the landscaping, and other exterior features.
+              Protect your property with comprehensive gutter solutions from
+              Texas Elite Gutters Exteriors. We provide professional gutter
+              services throughout San Antonio and Converse, TX. Our expert team
+              specializes in installing seamless gutters, downspouts, rain
+              barrels, and gutter guards to create a complete water management
+              system for your home. We focus on quality installations that
+              prevent water damage and protect the foundation of your property,
+              the landscaping, and other exterior features.
             </p>
             <div className="text-center my-8">
               <a href="tel:210-835-7520" className="inline-block">
@@ -116,7 +123,9 @@ export default function GutterServices() {
                   />
                 </svg>
                 <span className="text-lg">
-                  <span className="font-semibold">Seamless Gutters:</span> Custom-fabricated on-site to fit your home perfectly, reducing leaks and clogs
+                  <span className="font-semibold">Seamless Gutters:</span>{" "}
+                  Custom-fabricated on-site to fit your home perfectly, reducing
+                  leaks and clogs
                 </span>
               </li>
               <li className="flex items-start">
@@ -134,7 +143,8 @@ export default function GutterServices() {
                   />
                 </svg>
                 <span className="text-lg">
-                  <span className="font-semibold">Downspouts:</span> Strategically placed to direct water away from your foundation
+                  <span className="font-semibold">Downspouts:</span>{" "}
+                  Strategically placed to direct water away from your foundation
                 </span>
               </li>
               <li className="flex items-start">
@@ -152,7 +162,9 @@ export default function GutterServices() {
                   />
                 </svg>
                 <span className="text-lg">
-                  <span className="font-semibold">Rain Barrels:</span> Eco-friendly water collection systems that conserve water for landscaping
+                  <span className="font-semibold">Rain Barrels:</span>{" "}
+                  Eco-friendly water collection systems that conserve water for
+                  landscaping
                 </span>
               </li>
               <li className="flex items-start">
@@ -170,12 +182,19 @@ export default function GutterServices() {
                   />
                 </svg>
                 <span className="text-lg">
-                  <span className="font-semibold">Gutter Guards:</span> Protective systems that prevent debris buildup while allowing water to flow freely
+                  <span className="font-semibold">Gutter Guards:</span>{" "}
+                  Protective systems that prevent debris buildup while allowing
+                  water to flow freely
                 </span>
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              We provide a comprehensive consultation to assess the specific needs of your property and recommend the ideal gutter solution. Our professional installation ensures your system works efficiently to protect your home from water damage. All our work comes with a lifetime warranty on workmanship for your peace of mind.
+              We provide a comprehensive consultation to assess the specific
+              needs of your property and recommend the ideal gutter solution.
+              Our professional installation ensures your system works
+              efficiently to protect your home from water damage. All our work
+              comes with a lifetime warranty on workmanship for your peace of
+              mind.
             </p>
             <div className="text-center mt-8">
               <Link href="/contact" passHref>

@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   };
 
   const handleSignOut = async () => {
-    await signOut({ callbackUrl: '/' });
+    await signOut({ callbackUrl: "/" });
   };
 
   return (
@@ -81,10 +81,13 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
-          
+
           {isAuthenticated ? (
             <div className="flex items-center space-x-4">
-              <Link href="/admin" className="text-[#FFFFFF] hover:text-[#C9A357]">
+              <Link
+                href="/admin"
+                className="text-[#FFFFFF] hover:text-[#C9A357]"
+              >
                 Admin Dashboard
               </Link>
               <Button variant="secondary" onClick={handleSignOut}>
@@ -96,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               <Button variant="secondary">Admin Login</Button>
             </Link>
           )}
-          
+
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
             passHref
@@ -205,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               Admin Login
             </Link>
           )}
-          
+
           <div className="py-2">
             <Link
               href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"

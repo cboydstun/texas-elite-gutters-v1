@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
-import LoginForm from '@/components/auth/LoginForm';
+import { Metadata } from "next";
+import LoginForm from "@/components/auth/LoginForm";
 
 export const metadata: Metadata = {
-  title: 'Login | Texas Elite Gutters & Exteriors',
-  description: 'Login to your admin account',
+  title: "Login | Texas Elite Gutters & Exteriors",
+  description: "Login to your admin account",
 };
 
 export default function LoginPage() {

@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 const loginSchema = z.object({
-  email: z.string().email({ message: 'Invalid email format' }),
-  password: z.string().min(1, { message: 'Password is required' }),
+  email: z.string().email({ message: "Invalid email format" }),
+  password: z.string().min(1, { message: "Password is required" }),
 });
 
 type LoginFormData = z.infer<typeof loginSchema>;
@@ -34,22 +34,22 @@ export default function LoginForm() {
     setError(null);
 
     try {
-      const result = await signIn('credentials', {
+      const result = await signIn("credentials", {
         redirect: false,
         email: data.email,
         password: data.password,
       });
 
       if (result?.error) {
-        setError('Invalid email or password');
+        setError("Invalid email or password");
         return;
       }
 
-      router.push('/admin');
+      router.push("/admin");
       router.refresh();
     } catch (error) {
-      setError('An error occurred. Please try again.');
-      console.error('Login error:', error);
+      setError("An error occurred. Please try again.");
+      console.error("Login error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -64,13 +64,16 @@ export default function LoginForm() {
       )}
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-gray-700"
+        >
           Email
         </label>
         <input
           id="email"
           type="email"
-          {...register('email')}
+          {...register("email")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.email && (
@@ -79,13 +82,16 @@ export default function LoginForm() {
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="password"
+          className="block text-sm font-medium text-gray-700"
+        >
           Password
         </label>
         <input
           id="password"
           type="password"
-          {...register('password')}
+          {...register("password")}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
         />
         {errors.password && (
@@ -95,14 +101,17 @@ export default function LoginForm() {
 
       <div>
         <Button type="submit" disabled={isSubmitting} className="w-full">
-          {isSubmitting ? 'Signing in...' : 'Sign In'}
+          {isSubmitting ? "Signing in..." : "Sign In"}
         </Button>
       </div>
 
       <div className="text-center text-sm">
         <p>
-          Do not have an account?{' '}
-          <Link href="/register" className="text-[#C9A357] hover:text-[#B08A3E]">
+          Do not have an account?{" "}
+          <Link
+            href="/register"
+            className="text-[#C9A357] hover:text-[#B08A3E]"
+          >
             Register here
           </Link>
         </p>

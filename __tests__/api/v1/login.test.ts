@@ -1,17 +1,17 @@
-import mongoose from 'mongoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
-import { User } from '@/lib/db/models/User';
-import { z } from 'zod';
-import jwt from 'jsonwebtoken';
+import mongoose from "mongoose";
+import { MongoMemoryServer } from "mongodb-memory-server";
+import { User } from "@/lib/db/models/User";
+import { z } from "zod";
+import jwt from "jsonwebtoken";
 
 // Mock the database connection
-jest.mock('@/lib/db/connect', () => ({
+jest.mock("@/lib/db/connect", () => ({
   __esModule: true,
   default: jest.fn().mockResolvedValue(null),
 }));
 
 // Mock the rate limiter
-jest.mock('@/lib/auth/rateLimit', () => ({
+jest.mock("@/lib/auth/rateLimit", () => ({
   rateLimit: () => ({
     check: jest.fn().mockResolvedValue(null),
   }),
@@ -23,16 +23,16 @@ const loginSchema = z.object({
   password: z.string().min(1, { message: "Password is required" }),
 });
 
-describe('Login Functionality', () => {
+describe("Login Functionality", () => {
   let mongoServer: MongoMemoryServer;
 
   beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
     const uri = mongoServer.getUri();
     await mongoose.connect(uri);
-    
+
     // Set up environment variable for JWT
-    process.env.AUTH_SECRET = 'test-secret-key';
+    process.env.AUTH_SECRET = "test-secret-key";
   });
 
   afterAll(async () => {
@@ -46,34 +46,34 @@ describe('Login Functionality', () => {
     jest.clearAllMocks();
   });
 
-  it('should validate login data correctly', () => {
+  it("should validate login data correctly", () => {
     // Valid data
     const validData = {
-      email: 'test@example.com',
-      password: 'Password123',
+      email: "test@example.com",
+      password: "Password123",
     };
-    
+
     const validResult = loginSchema.safeParse(validData);
     expect(validResult.success).toBe(true);
-    
+
     // Invalid email
     const invalidEmailData = {
-      email: 'invalid-email',
-      password: 'Password123',
+      email: "invalid-email",
+      password: "Password123",
     };
-    
+
     const invalidEmailResult = loginSchema.safeParse(invalidEmailData);
     expect(invalidEmailResult.success).toBe(false);
     if (!invalidEmailResult.success) {
       expect(invalidEmailResult.error.format().email).toBeDefined();
     }
-    
+
     // Empty password
     const emptyPasswordData = {
-      email: 'test@example.com',
-      password: '',
+      email: "test@example.com",
+      password: "",
     };
-    
+
     const emptyPasswordResult = loginSchema.safeParse(emptyPasswordData);
     expect(emptyPasswordResult.success).toBe(false);
     if (!emptyPasswordResult.success) {
@@ -81,12 +81,12 @@ describe('Login Functionality', () => {
     }
   });
 
-  it('should authenticate a user with valid credentials', async () => {
+  it("should authenticate a user with valid credentials", async () => {
     // Create a test user
     const userData = {
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'Password123',
+      name: "Test User",
+      email: "test@example.com",
+      password: "Password123",
       isAdmin: true,
     };
 
@@ -103,17 +103,17 @@ describe('Login Functionality', () => {
 
     // Verify JWT token generation
     const token = jwt.sign(
-      { 
+      {
         id: foundUser!._id,
         email: foundUser!.email,
-        isAdmin: foundUser!.isAdmin
+        isAdmin: foundUser!.isAdmin,
       },
       process.env.AUTH_SECRET!,
-      { expiresIn: '7d' }
+      { expiresIn: "7d" },
     );
-    
+
     expect(token).toBeTruthy();
-    
+
     // Verify token can be decoded
     const decoded = jwt.verify(token, process.env.AUTH_SECRET!);
     expect(decoded).toBeTruthy();
@@ -121,12 +121,12 @@ describe('Login Functionality', () => {
     expect((decoded as any).isAdmin).toBe(userData.isAdmin);
   });
 
-  it('should reject authentication with invalid credentials', async () => {
+  it("should reject authentication with invalid credentials", async () => {
     // Create a test user
     const userData = {
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'Password123',
+      name: "Test User",
+      email: "test@example.com",
+      password: "Password123",
       isAdmin: true,
     };
 
@@ -135,11 +135,14 @@ describe('Login Functionality', () => {
 
     // Test with wrong password
     const foundUser = await User.findOne({ email: userData.email });
-    const isWrongPasswordValid = await foundUser!.comparePassword('WrongPassword123');
+    const isWrongPasswordValid =
+      await foundUser!.comparePassword("WrongPassword123");
     expect(isWrongPasswordValid).toBe(false);
 
     // Test with non-existent user
-    const nonExistentUser = await User.findOne({ email: 'nonexistent@example.com' });
+    const nonExistentUser = await User.findOne({
+      email: "nonexistent@example.com",
+    });
     expect(nonExistentUser).toBeNull();
   });
 });

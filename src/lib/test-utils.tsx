@@ -9,7 +9,7 @@ const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">
+  options?: Omit<RenderOptions, "wrapper">,
 ) => {
   return {
     user: userEvent.setup(),
