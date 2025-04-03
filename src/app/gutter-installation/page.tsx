@@ -4,15 +4,17 @@ import { Button } from "@/components/ui/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gutter Installation Services | Texas Elite Gutters & Exteriors",
+  title:
+    "Seamless Aluminum Gutter Installation | Texas Elite Gutters & Exteriors",
   description:
-    "Professional gutter installation services in San Antonio and Converse, TX. We install seamless gutters to reduce clogs and provide lifetime warranty.",
+    "Professional seamless aluminum gutter installation in San Antonio, New Braunfels, Cibolo, Seguin, and surrounding areas. Durable, low-maintenance systems with lifetime warranty.",
   keywords:
-    "gutter installation, seamless gutters, downspout installation, K-style gutters, San Antonio, Converse, Texas",
+    "gutter installation, seamless gutters, aluminum gutters, gutter guards, downspout installation, San Antonio, New Braunfels, Cibolo, Seguin, Texas",
   openGraph: {
-    title: "Gutter Installation Services | Texas Elite Gutters & Exteriors",
+    title:
+      "Seamless Aluminum Gutter Installation | Texas Elite Gutters & Exteriors",
     description:
-      "Professional gutter installation services in San Antonio and Converse, TX.",
+      "Professional seamless aluminum gutter installation in San Antonio and surrounding areas. Durable, low-maintenance systems with lifetime warranty.",
     url: "https://texaselitegutters.com/gutter-installation",
     siteName: "Texas Elite Gutters & Exteriors",
     images: [
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
         url: "/hero-gutter-image.png",
         width: 1200,
         height: 630,
-        alt: "Gutter Installation Services",
+        alt: "Seamless Aluminum Gutter Installation",
       },
     ],
     locale: "en_US",
@@ -50,11 +52,11 @@ export default function GutterInstallation() {
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="container mx-auto px-4 flex flex-col items-center text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
-              Replace Your Damaged Gutters
+              Seamless Aluminum Gutter System
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
-              Schedule gutter installation services in the San Antonio or
-              Converse, TX area
+              Durable, low-maintenance gutters custom-fit to your home in San
+              Antonio, New Braunfels, Cibolo, Seguin, and surrounding areas
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -78,18 +80,29 @@ export default function GutterInstallation() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              To take care of your gutters in the San Antonio or Converse, TX
-              area, you will want a professional on the job. Texas Elite Gutters
-              &amp; Exteriors provides the gutter installation services you
-              need. We will meet with you to go over the full installation
-              process, including a start-to-finish timeline. Then, we will
-              handle your installation, protecting your home and cleaning up
-              your property as we work.
+              Having a reliable, durable gutter system is vital to the
+              protection of your home's exterior and interior. If you have a
+              clogged, leaky, or poorly maintained gutter system in place, it
+              can lead to serious water damage around your roof, siding,
+              basement, foundation, and more. Plus, an open, unkept gutter
+              system can be a breeding ground for pests, dirt, leaves, and other
+              outdoor debris.
+            </p>
+            <p className="text-lg mb-6 leading-relaxed">
+              A heavy-duty gutter system that's properly installed and
+              maintained can help eliminate these issues from occurring. At
+              Texas Elite Gutters & Exteriors, we install seamless aluminum
+              gutters that not only make gutter cleaning a thing of the past,
+              but also protect your home from unnecessary damage caused by
+              poorly installed gutters.
             </p>
             <div className="text-center my-8">
-              <Link href="/contact" passHref>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Contact us now for gutter and downspout installation services
+                  Schedule Your Free Estimate
                 </Button>
               </Link>
             </div>
@@ -97,16 +110,154 @@ export default function GutterInstallation() {
         </div>
       </section>
 
-      {/* Services Detail Section */}
+      {/* Why Gutter Installation Is Important */}
       <section className="w-full bg-[#5B8DB1]/10 py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
-            Handling every step of your installation work
+            Why Gutter Installation Is Important
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Do you need new gutters? We:
+              Properly installed gutters help direct rainwater away from your
+              home to avoid pooling water, flooding, and other structural damage
+              in and around your property. Unfortunately, homeowners don't often
+              think about the integrity of their gutter system until there is a
+              problem.
             </p>
+            <p className="text-lg mb-6 leading-relaxed">
+              If your gutters are loose, clogged, or aren't securely attached to
+              your fascia, your home is prone to damage from the elements. Water
+              damage could lead to structural issues, such as wood rot and
+              mildew, in your basement, under your roof and siding, and around
+              your foundation.
+            </p>
+            <h4 className="text-xl font-semibold mb-4 text-[#4A4A4A]">
+              Proper gutter installation can prevent:
+            </h4>
+            <ul className="list-none space-y-4 mb-8">
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">Flooded landscaping</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Flooded or leaky basements, crawl spaces, window wells, and
+                  foundations
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Mold, mildew, and rotting wood around window frames,
+                  foundation support joists, and basement walls & floors
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Wood rot & mildew damage under your roof & siding
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Cracks, holes, and dents around basement & foundation walls
+                  and floors
+                </span>
+              </li>
+            </ul>
+            <div className="text-center mt-8">
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Schedule Your Free Estimate
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="w-full py-16 bg-[#FFFFFF]">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            Benefits of Our Seamless Aluminum Gutter Installation
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg mb-6 leading-relaxed">
+              Proper installation and superior gutters make all the difference
+              for your home. When you choose Texas Elite Gutters & Exteriors,
+              you'll get an innovative, no-clog gutter system that will protect
+              your home against all weather conditions. Our system is made to
+              last year after year and is backed by industry-leading warranties.
+            </p>
+            <h4 className="text-xl font-semibold mb-4 text-[#4A4A4A]">
+              Our installation benefits include:
+            </h4>
             <ul className="list-none space-y-4 mb-8">
               <li className="flex items-start">
                 <svg
@@ -123,7 +274,7 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Install seamless gutters to reduce the risk of clogs
+                  Elimination of annual gutter cleaning
                 </span>
               </li>
               <li className="flex items-start">
@@ -141,7 +292,7 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Secure downspouts to the sides of houses
+                  Premium-grade aluminum material that won't flex
                 </span>
               </li>
               <li className="flex items-start">
@@ -159,20 +310,79 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Use 5- and 6-inch K-style gutters
+                  6" gutter size that carries 20% more water than standard 5"
+                  gutters
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Sturdy brackets that support the front, back, and hood of
+                  gutter system
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Range of colors to match your home
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  A no-clog, sag, or pull away guarantee
                 </span>
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              After completing your gutter installation services, we will
-              provide a lifetime warranty of workmanship to guarantee our work
-              and give you peace of mind. We can also install gutter guards or
-              sealant to make maintenance easier.
+              When you choose Texas Elite Gutters & Exteriors, we'll provide a
+              free onsite estimate for gutter installation on your property. Our
+              gutters come with a lifetime warranty and are guaranteed to never
+              clog or sag.
             </p>
             <div className="text-center mt-8">
-              <Link href="/contact" passHref>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Contact us now for gutter and downspout installation services
+                  Schedule Your Free Estimate
                 </Button>
               </Link>
             </div>
@@ -185,11 +395,13 @@ export default function GutterInstallation() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#001F33] to-[#003A5C] opacity-80"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6 text-[#C9A357]">
-            Ready to Get Started?
+            Protect Your Home with Quality Gutters
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Contact us today for a free quote on your gutter installation
-            project.
+            Schedule your free onsite estimate for gutter installation today
+            with one of our professional gutter specialists. You'll receive an
+            in-person evaluation of your existing gutter system and discuss
+            options that would best suit your home.
           </p>
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
@@ -199,7 +411,7 @@ export default function GutterInstallation() {
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"
             >
-              Get Your Project Evaluation
+              Schedule Your Free Estimate
             </Button>
           </Link>
         </div>
