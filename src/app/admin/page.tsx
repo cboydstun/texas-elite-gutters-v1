@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { auth } from "../../../auth";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,13 +7,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AdminDashboard() {
-  const session = await auth();
-
-  // Redirect to login if not authenticated
-  if (!session) {
-    redirect("/login");
-  }
-
   // Get current date for the dashboard
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
@@ -25,22 +16,13 @@ export default async function AdminDashboard() {
   });
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="px-6 py-8">
-          {/* Header with user info */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-4 border-b border-gray-200">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
-              <p className="text-gray-500">{currentDate}</p>
-            </div>
-            <div className="mt-4 md:mt-0 bg-[#001F33] text-white px-4 py-2 rounded-lg">
-              <p className="font-medium">
-                Welcome, {session.user?.name || "Admin"}
-              </p>
-              <p className="text-sm text-gray-300">{session.user?.email}</p>
-            </div>
-          </div>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="px-6 py-8">
+        {/* Header */}
+        <div className="mb-8 pb-4 border-b border-gray-200">
+          <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
+          <p className="text-gray-500">{currentDate}</p>
+        </div>
 
           {/* Quick stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -99,10 +81,10 @@ export default async function AdminDashboard() {
                 <li>• Traffic sources</li>
               </ul>
               <Link
-                href="#"
+                href="/admin/analytics"
                 className="text-[#C9A357] hover:text-[#B08A3E] font-medium text-sm"
               >
-                Coming soon →
+                View analytics →
               </Link>
             </div>
 
@@ -241,6 +223,6 @@ export default async function AdminDashboard() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
