@@ -1,6 +1,9 @@
 import { render, screen, waitFor } from "@/lib/test-utils";
 import { ContactForm } from "@/components/ui/ContactForm";
 
+// Mock fetch
+global.fetch = jest.fn();
+
 describe("ContactForm", () => {
   it("renders all form fields", () => {
     render(<ContactForm onSubmit={jest.fn()} />);
@@ -46,6 +49,12 @@ describe("ContactForm", () => {
   });
 
   it("submits form with valid data", async () => {
+    // Mock successful fetch response
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ success: true }),
+    });
+    
     const handleSubmit = jest.fn();
     const { user } = render(<ContactForm onSubmit={handleSubmit} />);
 
@@ -61,7 +70,23 @@ describe("ContactForm", () => {
     // Submit form
     await user.click(screen.getByRole("button", { name: /submit/i }));
 
-    // Verify submission
+    // Verify API call
+    await waitFor(() => {
+      expect(global.fetch).toHaveBeenCalledWith("/api/v1/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "John Doe",
+          email: "john@example.com",
+          phone: "210-555-1234",
+          message: "I need gutter installation",
+        }),
+      });
+    });
+
+    // Verify onSubmit callback was called
     await waitFor(() => {
       expect(handleSubmit).toHaveBeenCalledWith({
         name: "John Doe",
@@ -70,5 +95,33 @@ describe("ContactForm", () => {
         message: "I need gutter installation",
       });
     });
+
+    // Verify success message is displayed
+    expect(await screen.findByText(/thank you for your message/i)).toBeInTheDocument();
+  });
+
+  it("shows error message when API call fails", async () => {
+    // Mock failed fetch response
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      json: async () => ({ 
+        success: false, 
+        message: "Server error" 
+      }),
+    });
+    
+    const { user } = render(<ContactForm onSubmit={jest.fn()} />);
+
+    // Fill form with valid data
+    await user.type(screen.getByLabelText(/name/i), "John Doe");
+    await user.type(screen.getByLabelText(/email/i), "john@example.com");
+    await user.type(screen.getByLabelText(/phone/i), "210-555-1234");
+    await user.type(screen.getByLabelText(/message/i), "Test message");
+
+    // Submit form
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+
+    // Verify error message is displayed
+    expect(await screen.findByText(/server error/i)).toBeInTheDocument();
   });
 });

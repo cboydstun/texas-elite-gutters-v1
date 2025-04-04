@@ -19,15 +19,18 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 interface ContactFormProps {
-  onSubmit: (data: ContactFormData) => void;
+  onSubmit?: (data: ContactFormData) => void;
 }
 
 export const ContactForm = ({ onSubmit }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -35,8 +38,36 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
 
   const submitHandler = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    setSubmitSuccess(false);
+    setSubmitError(null);
+    
     try {
-      onSubmit(data);
+      // Call the API endpoint
+      const response = await fetch("/api/v1/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Failed to submit form");
+      }
+
+      // Reset the form on success
+      reset();
+      setSubmitSuccess(true);
+      
+      // Call the onSubmit prop if provided (for testing/custom handling)
+      if (onSubmit) {
+        onSubmit(data);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError(error instanceof Error ? error.message : "An unknown error occurred");
     } finally {
       setIsSubmitting(false);
     }
@@ -44,6 +75,27 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit(submitHandler)} className="space-y-6">
+      {submitSuccess && (
+        <div className="rounded-md bg-green-50 p-4 mb-4">
+          <div className="flex">
+            <div className="ml-3">
+              <p className="text-sm font-medium text-green-800">
+                Thank you for your message! We'll get back to you soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {submitError && (
+        <div className="rounded-md bg-red-50 p-4 mb-4">
+          <div className="flex">
+            <div className="ml-3">
+              <p className="text-sm font-medium text-red-800">{submitError}</p>
+            </div>
+          </div>
+        </div>
+      )}
       <div>
         <label
           htmlFor="name"

@@ -4,16 +4,6 @@ import Image from "next/image";
 import { ContactForm } from "@/components/ui/ContactForm";
 
 export default function ContactPage() {
-  const handleFormSubmit = (data: {
-    message: string;
-    name: string;
-    email: string;
-    phone: string;
-  }) => {
-    // In a real application, this would send the data to a server
-    console.log("Form submitted:", data);
-    alert("Thank you for your message! We'll get back to you soon.");
-  };
 
   return (
     <div className="flex flex-col items-center">
@@ -155,7 +145,7 @@ export default function ContactPage() {
                 Fill out the form below and we will get back to you as soon as
                 possible.
               </p>
-              <ContactForm onSubmit={handleFormSubmit} />
+              <ContactForm />
             </div>
           </div>
         </div>
