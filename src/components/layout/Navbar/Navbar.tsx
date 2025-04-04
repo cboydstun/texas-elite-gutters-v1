@@ -66,6 +66,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             Exterior Services
           </Link>
           <Link
+            href="/faq"
+            className="text-[#FFFFFF] hover:text-[#C9A357] font-medium"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/contact"
             className="text-[#FFFFFF] hover:text-[#C9A357] font-medium"
           >
@@ -153,6 +159,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
           >
             Exterior Services
+          </Link>
+          <Link
+            href="/faq"
+            className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
+          >
+            FAQ
           </Link>
           <Link
             href="/contact"
