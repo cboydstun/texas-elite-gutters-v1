@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import ReviewsCarousel from "@/components/ui/ReviewsCarousel";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -53,8 +54,9 @@ export default function Home() {
               Texas Elite Gutter Installation & Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
-              Professional gutter installation and services in San Antonio, TX.
-              Prevent water damage and protect your investment.
+              Professional gutter installation and services in San Antonio, New
+              Braunfels, Cibolo, Seguin, and surrounding areas. Protect your
+              home and investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -201,27 +203,28 @@ export default function Home() {
       <section className="w-full bg-[#5B8DB1]/10 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4 text-[#C9A357]">
-            End Your Gutter Nightmares Today
+            Protect Your Home with Expert Gutter Solutions
           </h2>
           <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
-            Trusted Gutter Specialist in San Antonio & Converse since 2010
+            Serving San Antonio, New Braunfels, Cibolo, Seguin, and surrounding
+            areas
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Tired of watching waterfalls cascade from your gutters during
-              every Texas downpour? Water damage does not wait—and neither
-              should you. At Texas Elite Gutters & Exteriors, we transform
-              vulnerable properties into water-resistant fortresses throughout
-              San Antonio, Converse, and surrounding communities. Our team does
-              not just replace gutters; we engineer comprehensive drainage
-              solutions tailored to the unique needs of your property,
-              eliminating overflows, foundation damage, and landscape erosion
-              once and for all.
+              Water can cause significant damage to your home's structure and
+              foundation over time. At Texas Elite Gutters & Exteriors, we
+              design custom gutter systems by carefully analyzing your roof's
+              shape, pitch, overhang, and valleys to ensure both functionality
+              and aesthetic appeal. Our Solutionists will assess your specific
+              needs and create a tailored plan for your seamless gutter
+              installation or replacement.
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Do not let another storm damage your biggest investment. Request
-              your comprehensive property assessment and receive a detailed,
-              no-obligation estimate—absolutely free.
+              We use cutting-edge technology and premium materials to implement
+              effective water management solutions that protect your property
+              from foundation damage and landscape erosion. Don't wait for the
+              next storm to damage your biggest investment. Request your
+              comprehensive property assessment today.
             </p>
             <div className="text-center">
               <Link
@@ -237,16 +240,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="w-full py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            What Our Customers Are Saying
+          </h3>
+          <div className="max-w-6xl mx-auto">
+            <ReviewsCarousel />
+          </div>
+        </div>
+      </section>
+
       {/* Services Detail Section */}
       <section className="w-full py-16 bg-[#FFFFFF]">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
-            Providing the services you need
+            We Know Rain Gutters
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              Updating and maintaining your property starts with calling our
-              professionals. You can depend on our fully insured team for:
+              When designing and installing gutters on your property, we
+              consider every detail - from roofline and pitch to overhang,
+              fascia, and valleys. Our comprehensive approach ensures your
+              gutter system not only functions perfectly but also enhances your
+              home's appearance.
             </p>
             <ul className="list-none space-y-4 mb-8">
               <li className="flex items-start">
@@ -267,8 +285,8 @@ export default function Home() {
                   <span className="font-semibold text-[#C9A357]">
                     Gutter services:
                   </span>{" "}
-                  Installing seamless gutters, downspouts, rain barrels, and
-                  gutter guards.
+                  Installation, cleaning, maintenance, and repair of seamless
+                  gutters, downspouts, rain barrels, and gutter guards.
                 </span>
               </li>
               <li className="flex items-start">
@@ -287,22 +305,25 @@ export default function Home() {
                 </svg>
                 <span className="text-lg">
                   <span className="font-semibold text-[#C9A357]">
-                    Exterior services:
+                    Exterior solutions:
                   </span>{" "}
-                  Building pergolas, gazebos, patios, fences and decks.
+                  Building pergolas, gazebos, patios, fences, decks, and other
+                  exterior enhancements to complement your gutter system.
                 </span>
               </li>
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
-              You can also trust us for a variety of exterior repairs, including
-              siding and fascia work. Call{" "}
+              Your home is a personal investment, and we offer personal
+              solutions. Our professional gutter experts will assess your unique
+              situation and propose the best considerations for your property.
+              Call{" "}
               <a
                 href="tel:210-835-7520"
                 className="text-[#C9A357] font-semibold hover:text-[#B08A3E]"
               >
                 210-835-7520
               </a>{" "}
-              today to reach out to our locally owned gutter company.
+              today to schedule your consultation.
             </p>
           </div>
         </div>
@@ -312,21 +333,29 @@ export default function Home() {
       <section className="w-full bg-[#5B8DB1]/10 py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
-            Learn more about us
+            Community-Minded, Customer-Focused
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
-              At Texas Elite Gutters &amp; Exteriors, we always strive to be the
-              best. We choose quality over quantity, and providing excellent
-              customer service and work is our mission. Our tested expertise
-              lies in delivering top-quality gutter services, so you can trust
-              us to keep your property looking its best. Our dedicated team will
-              guarantee the quality, efficiency and consistency of your gutters,
-              improving the look and functionality of your property.
+              At Texas Elite Gutters &amp; Exteriors, we prioritize our
+              customers' needs above all else. We're a community-minded,
+              customer-focused gutter contractor who believes in investing in
+              our workers and delivering 5-star service to every client. Our
+              core values of honesty, integrity, and transparency guide
+              everything we do.
+            </p>
+            <p className="text-lg mb-6 leading-relaxed">
+              We're committed to publishing all reviews—positive or negative—to
+              maintain accountability and continuously improve our service. This
+              commitment to excellence has earned us a large number of returning
+              clients, friends, and neighbors throughout San Antonio, New
+              Braunfels, Cibolo, Seguin, and surrounding areas. Some of them may
+              even be your neighbors!
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              You will see the impact of our experience when we work on your
-              property. Reach out to us today about the exterior of your home.
+              Experience the difference of working with a gutter contractor who
+              truly cares about your home and community. Contact us today to
+              discuss your gutter and exterior needs.
             </p>
             <div className="text-center">
               <Link href="/contact" passHref>

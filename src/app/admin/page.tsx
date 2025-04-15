@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import { auth } from "../../../auth";
-import { redirect } from "next/navigation";
 import Link from "next/link";
+import dbConnect from "@/lib/db/connect";
+import { Contact } from "@/lib/db/models/Contact";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard | Texas Elite Gutters & Exteriors",
@@ -9,13 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AdminDashboard() {
-  const session = await auth();
-
-  // Redirect to login if not authenticated
-  if (!session) {
-    redirect("/login");
-  }
-
   // Get current date for the dashboard
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
@@ -24,33 +17,36 @@ export default async function AdminDashboard() {
     day: "numeric",
   });
 
+  // Connect to database and get contact data
+  await dbConnect();
+  const contactCount = await Contact.countDocuments({});
+  
+  // Get the 3 most recent contacts
+  const recentContacts = await Contact.find({})
+    .sort({ createdAt: -1 })
+    .limit(3)
+    .lean();
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="px-6 py-8">
-          {/* Header with user info */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-4 border-b border-gray-200">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
-              <p className="text-gray-500">{currentDate}</p>
-            </div>
-            <div className="mt-4 md:mt-0 bg-[#001F33] text-white px-4 py-2 rounded-lg">
-              <p className="font-medium">
-                Welcome, {session.user?.name || "Admin"}
-              </p>
-              <p className="text-sm text-gray-300">{session.user?.email}</p>
-            </div>
-          </div>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="px-6 py-8">
+        {/* Header */}
+        <div className="mb-8 pb-4 border-b border-gray-200">
+          <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
+          <p className="text-gray-500">{currentDate}</p>
+        </div>
 
           {/* Quick stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#C9A357]">
-              <h3 className="text-lg font-semibold mb-1">Total Inquiries</h3>
-              <p className="text-3xl font-bold">0</p>
-              <p className="text-sm text-gray-500 mt-2">
-                From contact form submissions
-              </p>
-            </div>
+            <Link href="/admin/contacts" className="block">
+              <div className="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#C9A357] hover:bg-gray-100 transition-colors">
+                <h3 className="text-lg font-semibold mb-1">Total Inquiries</h3>
+                <p className="text-3xl font-bold">{contactCount}</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  From contact form submissions
+                </p>
+              </div>
+            </Link>
 
             <div className="bg-[#F8F9FA] p-4 rounded-lg border-l-4 border-[#001F33]">
               <h3 className="text-lg font-semibold mb-1">Quote Requests</h3>
@@ -99,10 +95,10 @@ export default async function AdminDashboard() {
                 <li>• Traffic sources</li>
               </ul>
               <Link
-                href="#"
+                href="/admin/analytics"
                 className="text-[#C9A357] hover:text-[#B08A3E] font-medium text-sm"
               >
-                Coming soon →
+                View analytics →
               </Link>
             </div>
 
@@ -172,75 +168,59 @@ export default async function AdminDashboard() {
             </div>
           </div>
 
-          {/* Recent activity section */}
+          {/* Recent contacts section */}
           <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4">Recent Activity</h3>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">Recent Inquiries</h3>
+              <Link
+                href="/admin/contacts"
+                className="text-[#C9A357] hover:text-[#B08A3E] font-medium text-sm"
+              >
+                View all →
+              </Link>
+            </div>
             <div className="border-t border-gray-200">
-              <div className="py-4 border-b border-gray-100 flex items-start">
-                <div className="bg-green-100 p-2 rounded-full mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-green-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+              {recentContacts.length > 0 ? (
+                recentContacts.map((contact: any) => (
+                  <div
+                    key={contact._id?.toString()}
+                    className="py-4 border-b border-gray-100 flex items-start"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                    <div className="bg-blue-100 p-2 rounded-full mr-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-blue-600"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-medium">{contact.name}</p>
+                      <p className="text-sm text-gray-500">
+                        {contact.email} • {contact.phone}
+                      </p>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {new Date(contact.createdAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          hour: "numeric",
+                          minute: "numeric",
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="py-4 text-center text-gray-500">
+                  No contact submissions yet
                 </div>
-                <div>
-                  <p className="font-medium">Admin login successful</p>
-                  <p className="text-sm text-gray-500">Just now</p>
-                </div>
-              </div>
-              <div className="py-4 border-b border-gray-100 flex items-start">
-                <div className="bg-blue-100 p-2 rounded-full mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-blue-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                    <path
-                      fillRule="evenodd"
-                      d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Admin dashboard accessed</p>
-                  <p className="text-sm text-gray-500">Just now</p>
-                </div>
-              </div>
-              <div className="py-4 flex items-start">
-                <div className="bg-gray-100 p-2 rounded-full mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-gray-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">System initialized</p>
-                  <p className="text-sm text-gray-500">Just now</p>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
       </div>
-    </div>
+
   );
 }

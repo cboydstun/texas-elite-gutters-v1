@@ -66,6 +66,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             Exterior Services
           </Link>
           <Link
+            href="/faq"
+            className="text-[#FFFFFF] hover:text-[#C9A357] font-medium"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/contact"
             className="text-[#FFFFFF] hover:text-[#C9A357] font-medium"
           >
@@ -81,24 +87,6 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
-
-          {isAuthenticated ? (
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/admin"
-                className="text-[#FFFFFF] hover:text-[#C9A357]"
-              >
-                Admin Dashboard
-              </Link>
-              <Button variant="secondary" onClick={handleSignOut}>
-                Sign Out
-              </Button>
-            </div>
-          ) : (
-            <Link href="/login" passHref>
-              <Button variant="secondary">Admin Login</Button>
-            </Link>
-          )}
 
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
@@ -173,6 +161,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             Exterior Services
           </Link>
           <Link
+            href="/faq"
+            className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/contact"
             className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
           >
@@ -184,31 +178,6 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               210-835-7520
             </a>
           </div>
-          {/* Auth links for mobile */}
-          {isAuthenticated ? (
-            <>
-              <Link
-                href="/admin"
-                className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
-              >
-                Admin Dashboard
-              </Link>
-              <button
-                onClick={handleSignOut}
-                className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2 text-left"
-              >
-                Sign Out
-              </button>
-            </>
-          ) : (
-            <Link
-              href="/login"
-              className="text-[#FFFFFF] hover:text-[#C9A357] font-medium py-2"
-            >
-              Admin Login
-            </Link>
-          )}
-
           <div className="py-2">
             <Link
               href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"

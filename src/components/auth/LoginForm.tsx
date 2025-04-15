@@ -104,18 +104,6 @@ export default function LoginForm() {
           {isSubmitting ? "Signing in..." : "Sign In"}
         </Button>
       </div>
-
-      <div className="text-center text-sm">
-        <p>
-          Do not have an account?{" "}
-          <Link
-            href="/register"
-            className="text-[#C9A357] hover:text-[#B08A3E]"
-          >
-            Register here
-          </Link>
-        </p>
-      </div>
     </form>
   );
 }

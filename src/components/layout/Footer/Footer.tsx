@@ -71,8 +71,18 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 </Link>
               </li>
               <li>
+                <Link href="/faq" className="hover:text-[#C9A357]">
+                  FAQ
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-[#C9A357]">
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/login" className="hover:text-[#C9A357]">
+                  Careers
                 </Link>
               </li>
             </ul>

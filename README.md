@@ -25,10 +25,15 @@ This project is a business website built with Next.js 15, TypeScript, and modern
 - **Database**:
   - MongoDB with Mongoose ODM
   - Data validation and schema enforcement
+- **Analytics**:
+  - ThumbMarkJS for browser fingerprinting
+  - Visitor tracking and analytics
+  - Custom analytics dashboard
 - **Form Handling**:
   - React Hook Form for form state management
   - Zod for schema validation
   - Custom form components with validation feedback
+  - Nodemailer for email notifications from contact form submissions
 - **Testing**:
   - Jest as the test runner
   - React Testing Library for component testing
@@ -56,9 +61,12 @@ texas-elite-gutters-v1/
 │   ├── app/                  # Next.js 15 App Router structure
 │   │   ├── page.tsx          # Home page
 │   │   ├── admin/            # Admin dashboard
+│   │   │   └── analytics/    # Analytics dashboard
 │   │   ├── api/              # API routes
 │   │   │   ├── auth/         # NextAuth.js API routes
 │   │   │   └── v1/           # API version 1 routes
+│   │   │       ├── analytics/# Analytics API endpoints
+│   │   │       ├── contacts/ # Contact form API endpoints
 │   │   │       ├── login/    # Login endpoint
 │   │   │       └── register/ # Registration endpoint
 │   │   ├── gutter-installation/
@@ -111,6 +119,7 @@ texas-elite-gutters-v1/
 - **Admin Dashboard**:
   - Overview of site statistics
   - User management
+  - Contact form submissions management
   - Content management (coming soon)
 
 ## Implemented Components
@@ -153,8 +162,22 @@ The following components have been implemented following TDD principles:
   - Dynamic navigation links
 
 - **AuthProvider**: Authentication context provider:
+
   - Session management
   - User state across the application
+
+- **AnalyticsDashboard**: Analytics visualization component with:
+
+  - Visitor statistics display
+  - Device breakdown charts
+  - Page popularity metrics
+  - Interactive data filtering
+
+- **FingerprintTracker**: Client-side tracking component:
+  - Browser fingerprinting with ThumbMarkJS
+  - Visit duration tracking
+  - Page interaction monitoring
+  - Anonymous visitor identification
 
 ## Development Workflow
 
@@ -223,8 +246,30 @@ The application provides the following API endpoints:
   - Implements rate limiting for security
 
 - **GET /api/auth/session**: Get the current user session
+
   - Used by NextAuth.js for session management
   - Returns user information if authenticated
+
+- **POST /api/v1/contacts**: Submit a contact form
+
+  - Required fields: name, email, phone, message
+  - Validates input using Zod schema
+  - Sends email notification using Nodemailer
+  - Stores submission in MongoDB
+
+- **GET /api/v1/contacts**: Retrieve all contact submissions (protected)
+
+  - Requires authentication
+  - Returns all contact form submissions
+
+- **PUT /api/v1/contacts**: Update contact status (protected)
+
+  - Requires authentication
+  - Updates status of a contact (new, contacted, resolved, archived)
+
+- **DELETE /api/v1/contacts**: Delete a contact submission (protected)
+  - Requires authentication
+  - Permanently removes a contact submission
 
 ### Building for Production
 
