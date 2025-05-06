@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "Seamless Aluminum Gutter Installation | Texas Elite Gutters & Exteriors",
   description:
     "Professional seamless aluminum gutter installation in San Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas. Durable, low-maintenance systems with lifetime warranty.",
+
   keywords:
     "gutter installation, seamless gutters, aluminum gutters, gutter guards, downspout installation, San Antonio, New Braunfels, Cibolo, Seguin, Texas",
   openGraph: {
@@ -57,6 +58,7 @@ export default function GutterInstallation() {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
               Durable, low-maintenance gutters custom-fit to your home in San
               Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas
+
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -123,6 +125,7 @@ export default function GutterInstallation() {
               in and around your property. Unfortunately, homeowners don't often
               think about the integrity of their gutter system until there is a
               problem.
+
             </p>
             <p className="text-lg mb-6 leading-relaxed">
               If your gutters are loose, clogged, or aren't securely attached to
@@ -222,6 +225,7 @@ export default function GutterInstallation() {
                 </svg>
                 <span className="text-lg">
                   Soil erosion around your home's foundation caused by uncontrolled water runoff
+
                 </span>
               </li>
               <li className="flex items-start">
@@ -240,6 +244,7 @@ export default function GutterInstallation() {
                 </svg>
                 <span className="text-lg">
                   Staining and discoloration of siding, brick, or stucco from constant water exposure
+
                 </span>
               </li>
               <li className="flex items-start">
@@ -258,6 +263,7 @@ export default function GutterInstallation() {
                 </svg>
                 <span className="text-lg">
                   Foundation settling and structural shifts over time from chronic water pooling
+
                 </span>
               </li>
               <li className="flex items-start">
@@ -294,6 +300,7 @@ export default function GutterInstallation() {
                 </svg>
                 <span className="text-lg">
                   Decreased curb appeal and property value caused by visible gutter overflow, stains, and water damage
+
                 </span>
               </li>
             </ul>
@@ -444,6 +451,7 @@ export default function GutterInstallation() {
               When you choose Texas Elite Gutters & Exteriors, we'll provide a
               free onsite project evaluation for gutter installation on your property. Our
               gutters come with a lifetime warranty and are guaranteed to sag.
+
             </p>
             <div className="text-center mt-8">
               <Link
@@ -452,6 +460,7 @@ export default function GutterInstallation() {
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
                   Schedule Your Free Project Evaluation
+
                 </Button>
               </Link>
             </div>
@@ -468,6 +477,7 @@ export default function GutterInstallation() {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Schedule your free onsite project evaluation for gutter installation today
+
             with one of our professional gutter specialists. You'll receive an
             in-person evaluation of your existing gutter system and discuss
             options that would best suit your home.

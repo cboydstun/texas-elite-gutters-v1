@@ -383,6 +383,7 @@ export default function Home() {
               commitment to excellence has earned us a large number of returning
               clients, friends, and neighbors throughout San Antonio, New
               Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas. Some of them may
+
               even be your neighbors!
             </p>
             <p className="text-lg mb-8 leading-relaxed">
