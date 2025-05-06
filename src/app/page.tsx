@@ -75,6 +75,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Client Showcase Section */}
+      <section className="w-full py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="w-full md:w-1/2 max-w-lg relative">
+              <Image
+                src="/images/oscar_ladder_3.png"
+                alt="Client on ladder performing gutter service"
+                width={500}
+                height={600}
+                className="rounded-lg shadow-lg mx-auto"
+              />
+            </div>
+            <div className="w-full md:w-1/2 max-w-lg">
+              <h2 className="text-3xl font-bold mb-4 text-[#001F33]">
+                San Antonio Best Gutter Service
+              </h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                At Texas Elite Gutters & Exteriors, we take pride in our hands-on approach to gutter installation and maintenance. Our experienced professionals climb the ladder so you don't have to, ensuring your gutters are properly installed and maintained for optimal performance and longevity.
+              </p>
+              <Link
+                href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
+                passHref
+              >
+                <Button variant="primary" className="px-8 py-3 shadow-lg">
+                  Schedule Your Service Today
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-16 w-full">
         <div className="container mx-auto px-4">
@@ -206,7 +239,7 @@ export default function Home() {
             Protect Your Home with Expert Gutter Solutions
           </h2>
           <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
-            Serving San Antonio, New Braunfels, Cibolo, Seguin, and surrounding
+            Serving San Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding
             areas
           </h3>
           <div className="max-w-4xl mx-auto">
@@ -349,7 +382,7 @@ export default function Home() {
               maintain accountability and continuously improve our service. This
               commitment to excellence has earned us a large number of returning
               clients, friends, and neighbors throughout San Antonio, New
-              Braunfels, Cibolo, Seguin, and surrounding areas. Some of them may
+              Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas. Some of them may
               even be your neighbors!
             </p>
             <p className="text-lg mb-8 leading-relaxed">

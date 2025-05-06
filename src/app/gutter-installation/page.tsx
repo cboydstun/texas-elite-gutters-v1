@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Seamless Aluminum Gutter Installation | Texas Elite Gutters & Exteriors",
   description:
-    "Professional seamless aluminum gutter installation in San Antonio, New Braunfels, Cibolo, Seguin, and surrounding areas. Durable, low-maintenance systems with lifetime warranty.",
+    "Professional seamless aluminum gutter installation in San Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas. Durable, low-maintenance systems with lifetime warranty.",
   keywords:
     "gutter installation, seamless gutters, aluminum gutters, gutter guards, downspout installation, San Antonio, New Braunfels, Cibolo, Seguin, Texas",
   openGraph: {
@@ -56,7 +56,7 @@ export default function GutterInstallation() {
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
               Durable, low-maintenance gutters custom-fit to your home in San
-              Antonio, New Braunfels, Cibolo, Seguin, and surrounding areas
+              Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -102,7 +102,7 @@ export default function GutterInstallation() {
                 passHref
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Schedule Your Free Estimate
+                  Schedule Your Free Project Evaluation
                 </Button>
               </Link>
             </div>
@@ -166,25 +166,6 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Flooded or leaky basements, crawl spaces, window wells, and
-                  foundations
-                </span>
-              </li>
-              <li className="flex items-start">
-                <svg
-                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span className="text-lg">
                   Mold, mildew, and rotting wood around window frames,
                   foundation support joists, and basement walls & floors
                 </span>
@@ -222,8 +203,97 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Cracks, holes, and dents around basement & foundation walls
-                  and floors
+                  Attracts pests like mosquitoes, roaches, ants, termites, and even rodents due to standing water and moisture-damaged wood around your home
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Soil erosion around your home's foundation caused by uncontrolled water runoff
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Staining and discoloration of siding, brick, or stucco from constant water exposure
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Foundation settling and structural shifts over time from chronic water pooling
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Increased home maintenance costs due to long-term water damage and pest issues
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-[#C9A357] mr-2 flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="text-lg">
+                  Decreased curb appeal and property value caused by visible gutter overflow, stains, and water damage
                 </span>
               </li>
             </ul>
@@ -233,7 +303,7 @@ export default function GutterInstallation() {
                 passHref
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Schedule Your Free Estimate
+                  Schedule Your Free Project Evaluation
                 </Button>
               </Link>
             </div>
@@ -372,9 +442,8 @@ export default function GutterInstallation() {
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
               When you choose Texas Elite Gutters & Exteriors, we'll provide a
-              free onsite estimate for gutter installation on your property. Our
-              gutters come with a lifetime warranty and are guaranteed to never
-              clog or sag.
+              free onsite project evaluation for gutter installation on your property. Our
+              gutters come with a lifetime warranty and are guaranteed to sag.
             </p>
             <div className="text-center mt-8">
               <Link
@@ -382,7 +451,7 @@ export default function GutterInstallation() {
                 passHref
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
-                  Schedule Your Free Estimate
+                  Schedule Your Free Project Evaluation
                 </Button>
               </Link>
             </div>
@@ -398,7 +467,7 @@ export default function GutterInstallation() {
             Protect Your Home with Quality Gutters
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Schedule your free onsite estimate for gutter installation today
+            Schedule your free onsite project evaluation for gutter installation today
             with one of our professional gutter specialists. You'll receive an
             in-person evaluation of your existing gutter system and discuss
             options that would best suit your home.
@@ -411,7 +480,7 @@ export default function GutterInstallation() {
               variant="secondary"
               className="px-8 py-4 font-bold text-lg shadow-lg"
             >
-              Schedule Your Free Estimate
+              Schedule Your Free Project Evaluation
             </Button>
           </Link>
         </div>
