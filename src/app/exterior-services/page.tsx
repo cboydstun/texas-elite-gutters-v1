@@ -157,12 +157,25 @@ export default function ExteriorServices() {
               <h4 className="text-xl font-semibold mb-4 text-[#4A4A4A]">
                 Exterior Painting
               </h4>
-              <p className="text-lg mb-6 leading-relaxed">
-                Transform your home with our professional exterior painting
-                services! Enjoy a fresh, long-lasting finish with high-quality
-                paint products built to withstand the Texas heat without fading,
-                chipping, or peeling.
-              </p>
+              <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
+                <div className="w-full md:w-1/2">
+                  <p className="text-lg leading-relaxed">
+                    Transform your home with our professional exterior painting
+                    services! Enjoy a fresh, long-lasting finish with high-quality
+                    paint products built to withstand the Texas heat without fading,
+                    chipping, or peeling.
+                  </p>
+                </div>
+                <div className="w-full md:w-1/2 max-w-md">
+                  <Image
+                    src="/IMG_3393-min.jpg"
+                    alt="Professional exterior painting service"
+                    width={500}
+                    height={400}
+                    className="rounded-lg shadow-lg mx-auto"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="mb-8">

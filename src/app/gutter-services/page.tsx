@@ -145,15 +145,30 @@ export default function GutterServices() {
               <h4 className="text-xl font-semibold mb-4 text-[#4A4A4A]">
                 Gutter Cleaning Services
               </h4>
-              <p className="text-lg mb-6 leading-relaxed">
-                We provide complete gutter cleaning services to protect your
-                building against water damage. Our experts properly remove the
-                dirt and debris from your gutters and ensure they are free from
-                clogs. We use advanced techniques and tools to remove all
-                debris, leaves, twigs, and other elements from the gutter system
-                safely and efficiently. Also, we inspect the guttering system
-                after cleaning to identify potential problems that may arise
-                later.
+              <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
+                <div className="w-full md:w-1/2">
+                  <p className="text-lg leading-relaxed">
+                    We provide complete gutter cleaning services to protect your
+                    building against water damage. Our experts properly remove the
+                    dirt and debris from your gutters and ensure they are free from
+                    clogs. We use advanced techniques and tools to remove all
+                    debris, leaves, twigs, and other elements from the gutter system
+                    safely and efficiently.
+                  </p>
+                </div>
+                <div className="w-full md:w-1/2 max-w-md">
+                  <Image
+                    src="/IMG_3302-min.png"
+                    alt="Professional gutter cleaning service"
+                    width={500}
+                    height={400}
+                    className="rounded-lg shadow-lg mx-auto"
+                  />
+                </div>
+              </div>
+              <p className="text-lg leading-relaxed">
+                We also inspect the guttering system after cleaning to identify potential 
+                problems that may arise later, ensuring your gutters remain in optimal condition.
               </p>
             </div>
 

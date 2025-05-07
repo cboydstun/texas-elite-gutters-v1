@@ -81,15 +81,28 @@ export default function GutterInstallation() {
       <section className="w-full bg-[#FFFFFF] py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg mb-6 leading-relaxed">
-              Having a reliable, durable gutter system is vital to the
-              protection of your home's exterior and interior. If you have a
-              clogged, leaky, or poorly maintained gutter system in place, it
-              can lead to serious water damage around your roof, siding,
-              basement, foundation, and more. Plus, an open, unkept gutter
-              system can be a breeding ground for pests, dirt, leaves, and other
-              outdoor debris.
-            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="w-full md:w-1/2">
+                <p className="text-lg mb-6 leading-relaxed">
+                  Having a reliable, durable gutter system is vital to the
+                  protection of your home's exterior and interior. If you have a
+                  clogged, leaky, or poorly maintained gutter system in place, it
+                  can lead to serious water damage around your roof, siding,
+                  basement, foundation, and more. Plus, an open, unkept gutter
+                  system can be a breeding ground for pests, dirt, leaves, and other
+                  outdoor debris.
+                </p>
+              </div>
+              <div className="w-full md:w-1/2 max-w-md">
+                <Image
+                  src="/IMG_2901-min.png"
+                  alt="Seamless gutter installation"
+                  width={500}
+                  height={400}
+                  className="rounded-lg shadow-lg mx-auto"
+                />
+              </div>
+            </div>
             <p className="text-lg mb-6 leading-relaxed">
               A heavy-duty gutter system that's properly installed and
               maintained can help eliminate these issues from occurring. At
