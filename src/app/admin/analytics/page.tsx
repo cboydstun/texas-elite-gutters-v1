@@ -27,10 +27,12 @@ export default async function AnalyticsPage() {
           <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
             <div>
               <h1 className="text-3xl font-bold mb-2">Analytics Dashboard</h1>
-              <p className="text-gray-500">Visitor insights and website performance</p>
+              <p className="text-gray-500">
+                Visitor insights and website performance
+              </p>
             </div>
           </div>
-          
+
           <AnalyticsDashboard data={analyticsData} />
         </div>
       </div>

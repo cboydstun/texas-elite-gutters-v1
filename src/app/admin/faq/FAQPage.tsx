@@ -71,10 +71,8 @@ export default function FAQPage() {
         // Update the FAQ in the local state
         setFaqs((prevFaqs) =>
           prevFaqs.map((faq) =>
-            faq._id.toString() === id
-              ? { ...faq, ...updateData }
-              : faq
-          )
+            faq._id.toString() === id ? { ...faq, ...updateData } : faq,
+          ),
         );
       } else {
         throw new Error(data.message || "Failed to update FAQ");
@@ -84,7 +82,7 @@ export default function FAQPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while updating the FAQ"
+          : "An error occurred while updating the FAQ",
       );
     }
   };
@@ -104,7 +102,7 @@ export default function FAQPage() {
       if (data.success) {
         // Remove the FAQ from the local state
         setFaqs((prevFaqs) =>
-          prevFaqs.filter((faq) => faq._id.toString() !== id)
+          prevFaqs.filter((faq) => faq._id.toString() !== id),
         );
       } else {
         throw new Error(data.message || "Failed to delete FAQ");
@@ -114,7 +112,7 @@ export default function FAQPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while deleting the FAQ"
+          : "An error occurred while deleting the FAQ",
       );
     }
   };
@@ -136,7 +134,9 @@ export default function FAQPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Frequently Asked Questions</h1>
+        <h1 className="text-2xl font-bold text-gray-900">
+          Frequently Asked Questions
+        </h1>
         <div className="flex space-x-3">
           <a
             href="/admin/faq/new"

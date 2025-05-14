@@ -161,9 +161,9 @@ export default function ExteriorServices() {
                 <div className="w-full md:w-1/2">
                   <p className="text-lg leading-relaxed">
                     Transform your home with our professional exterior painting
-                    services! Enjoy a fresh, long-lasting finish with high-quality
-                    paint products built to withstand the Texas heat without fading,
-                    chipping, or peeling.
+                    services! Enjoy a fresh, long-lasting finish with
+                    high-quality paint products built to withstand the Texas
+                    heat without fading, chipping, or peeling.
                   </p>
                 </div>
                 <div className="w-full md:w-1/2 max-w-md">

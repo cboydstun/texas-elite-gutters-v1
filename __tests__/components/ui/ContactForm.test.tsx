@@ -54,7 +54,7 @@ describe("ContactForm", () => {
       ok: true,
       json: async () => ({ success: true }),
     });
-    
+
     const handleSubmit = jest.fn();
     const { user } = render(<ContactForm onSubmit={handleSubmit} />);
 
@@ -97,19 +97,21 @@ describe("ContactForm", () => {
     });
 
     // Verify success message is displayed
-    expect(await screen.findByText(/thank you for your message/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/thank you for your message/i),
+    ).toBeInTheDocument();
   });
 
   it("shows error message when API call fails", async () => {
     // Mock failed fetch response
     (global.fetch as jest.Mock).mockResolvedValueOnce({
       ok: false,
-      json: async () => ({ 
-        success: false, 
-        message: "Server error" 
+      json: async () => ({
+        success: false,
+        message: "Server error",
       }),
     });
-    
+
     const { user } = render(<ContactForm onSubmit={jest.fn()} />);
 
     // Fill form with valid data

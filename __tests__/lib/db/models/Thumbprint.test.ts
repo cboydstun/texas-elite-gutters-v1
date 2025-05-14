@@ -26,24 +26,29 @@ describe("Thumbprint Model", () => {
       components: {
         browser: { name: "Chrome", version: "100.0" },
         os: "Windows",
-        screen: { width: 1920, height: 1080 }
+        screen: { width: 1920, height: 1080 },
       },
-      userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36",
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36",
       device: {
-        type: "desktop"
+        type: "desktop",
       },
-      visits: [{
-        timestamp: new Date(),
-        page: "/home",
-        referrer: "https://google.com"
-      }]
+      visits: [
+        {
+          timestamp: new Date(),
+          page: "/home",
+          referrer: "https://google.com",
+        },
+      ],
     };
 
     const thumbprint = new Thumbprint(thumbprintData);
     const savedThumbprint = await thumbprint.save();
 
     expect(savedThumbprint._id).toBeDefined();
-    expect(savedThumbprint.fingerprintHash).toBe(thumbprintData.fingerprintHash);
+    expect(savedThumbprint.fingerprintHash).toBe(
+      thumbprintData.fingerprintHash,
+    );
     expect(savedThumbprint.components).toEqual(thumbprintData.components);
     expect(savedThumbprint.userAgent).toBe(thumbprintData.userAgent);
     expect(savedThumbprint.device.type).toBe(thumbprintData.device.type);
@@ -57,16 +62,16 @@ describe("Thumbprint Model", () => {
   it("should require fingerprintHash", async () => {
     const thumbprintData = {
       components: {
-        browser: { name: "Chrome", version: "100.0" }
+        browser: { name: "Chrome", version: "100.0" },
       },
       userAgent: "Mozilla/5.0",
       device: {
-        type: "desktop"
-      }
+        type: "desktop",
+      },
     };
 
     const thumbprint = new Thumbprint(thumbprintData);
-    
+
     await expect(thumbprint.save()).rejects.toThrow();
   });
 
@@ -77,29 +82,35 @@ describe("Thumbprint Model", () => {
       components: { browser: "Chrome" },
       userAgent: "Mozilla/5.0",
       device: { type: "desktop" },
-      visits: [{
-        timestamp: new Date(),
-        page: "/home"
-      }]
+      visits: [
+        {
+          timestamp: new Date(),
+          page: "/home",
+        },
+      ],
     });
-    
+
     await thumbprint.save();
-    
+
     // Update with a new visit
-    const savedThumbprint = await Thumbprint.findOne({ fingerprintHash: "test-hash-456" });
+    const savedThumbprint = await Thumbprint.findOne({
+      fingerprintHash: "test-hash-456",
+    });
     if (!savedThumbprint) throw new Error("Thumbprint not found");
-    
+
     savedThumbprint.visits.push({
       timestamp: new Date(),
-      page: "/about"
+      page: "/about",
     });
     savedThumbprint.lastSeen = new Date();
     savedThumbprint.visitCount += 1;
-    
+
     await savedThumbprint.save();
-    
+
     // Verify updates
-    const updatedThumbprint = await Thumbprint.findOne({ fingerprintHash: "test-hash-456" });
+    const updatedThumbprint = await Thumbprint.findOne({
+      fingerprintHash: "test-hash-456",
+    });
     expect(updatedThumbprint?.visitCount).toBe(2);
     expect(updatedThumbprint?.visits.length).toBe(2);
     expect(updatedThumbprint?.visits[1].page).toBe("/about");
@@ -112,29 +123,35 @@ describe("Thumbprint Model", () => {
       components: { browser: "Chrome" },
       userAgent: "Mozilla/5.0",
       device: { type: "desktop" },
-      visits: [{
-        timestamp: new Date(),
-        page: "/home"
-      }]
+      visits: [
+        {
+          timestamp: new Date(),
+          page: "/home",
+        },
+      ],
     });
-    
+
     await thumbprint.save();
-    
+
     // Update with conversion
-    const savedThumbprint = await Thumbprint.findOne({ fingerprintHash: "test-hash-789" });
+    const savedThumbprint = await Thumbprint.findOne({
+      fingerprintHash: "test-hash-789",
+    });
     if (!savedThumbprint) throw new Error("Thumbprint not found");
-    
+
     savedThumbprint.conversion = {
       hasConverted: true,
       conversionDate: new Date(),
       conversionValue: 100,
-      conversionType: "purchase"
+      conversionType: "purchase",
     };
-    
+
     await savedThumbprint.save();
-    
+
     // Verify conversion
-    const updatedThumbprint = await Thumbprint.findOne({ fingerprintHash: "test-hash-789" });
+    const updatedThumbprint = await Thumbprint.findOne({
+      fingerprintHash: "test-hash-789",
+    });
     expect(updatedThumbprint?.conversion?.hasConverted).toBe(true);
     expect(updatedThumbprint?.conversion?.conversionValue).toBe(100);
     expect(updatedThumbprint?.conversion?.conversionType).toBe("purchase");

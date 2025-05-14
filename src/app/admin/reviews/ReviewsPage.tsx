@@ -73,8 +73,8 @@ export default function ReviewsPage() {
           prevReviews.map((review) =>
             review._id.toString() === id
               ? { ...review, ...updateData }
-              : review
-          )
+              : review,
+          ),
         );
       } else {
         throw new Error(data.message || "Failed to update review");
@@ -84,7 +84,7 @@ export default function ReviewsPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while updating the review"
+          : "An error occurred while updating the review",
       );
     }
   };
@@ -104,7 +104,7 @@ export default function ReviewsPage() {
       if (data.success) {
         // Remove the review from the local state
         setReviews((prevReviews) =>
-          prevReviews.filter((review) => review._id.toString() !== id)
+          prevReviews.filter((review) => review._id.toString() !== id),
         );
       } else {
         throw new Error(data.message || "Failed to delete review");
@@ -114,7 +114,7 @@ export default function ReviewsPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while deleting the review"
+          : "An error occurred while deleting the review",
       );
     }
   };

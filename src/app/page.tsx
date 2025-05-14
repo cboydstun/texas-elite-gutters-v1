@@ -93,7 +93,11 @@ export default function Home() {
                 San Antonio Best Gutter Service
               </h2>
               <p className="text-lg mb-6 leading-relaxed">
-                At Texas Elite Gutters & Exteriors, we take pride in our hands-on approach to gutter installation and maintenance. Our experienced professionals climb the ladder so you don't have to, ensuring your gutters are properly installed and maintained for optimal performance and longevity.
+                At Texas Elite Gutters & Exteriors, we take pride in our
+                hands-on approach to gutter installation and maintenance. Our
+                experienced professionals climb the ladder so you don't have to,
+                ensuring your gutters are properly installed and maintained for
+                optimal performance and longevity.
               </p>
               <Link
                 href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"
@@ -239,8 +243,8 @@ export default function Home() {
             Protect Your Home with Expert Gutter Solutions
           </h2>
           <h3 className="text-xl text-center mb-8 text-[#4A4A4A]">
-            Serving San Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding
-            areas
+            Serving San Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes,
+            and surrounding areas
           </h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
@@ -382,9 +386,8 @@ export default function Home() {
               maintain accountability and continuously improve our service. This
               commitment to excellence has earned us a large number of returning
               clients, friends, and neighbors throughout San Antonio, New
-              Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas. Some of them may
-
-              even be your neighbors!
+              Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas.
+              Some of them may even be your neighbors!
             </p>
             <p className="text-lg mb-8 leading-relaxed">
               Experience the difference of working with a gutter contractor who

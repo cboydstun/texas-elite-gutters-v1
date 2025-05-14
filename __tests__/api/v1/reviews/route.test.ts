@@ -4,7 +4,9 @@ import { Review, ReviewSource } from "@/lib/db/models/Review";
 
 // Mock the NextAuth middleware
 jest.mock("next-auth", () => ({
-  auth: jest.fn(() => Promise.resolve({ user: { isAdmin: true, id: "admin-id" } })),
+  auth: jest.fn(() =>
+    Promise.resolve({ user: { isAdmin: true, id: "admin-id" } }),
+  ),
 }));
 
 // Mock the database connection
@@ -13,12 +15,12 @@ jest.mock("@/lib/db/connect", () => jest.fn(() => Promise.resolve()));
 // Skip this test suite for now as it requires more complex mocking for Next.js API routes
 describe.skip("Reviews API", () => {
   let mongoServer: MongoMemoryServer;
-  
+
   beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
     const uri = mongoServer.getUri();
     await mongoose.connect(uri);
-    
+
     // Mock environment variables
     process.env.AUTH_SECRET = "test-secret";
   });

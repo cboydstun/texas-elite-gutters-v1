@@ -33,7 +33,6 @@ const createTransporter = () => {
   });
 };
 
-
 // POST /api/v1/contacts - Create a new contact (public)
 export async function POST(req: NextRequest) {
   try {
@@ -51,7 +50,7 @@ export async function POST(req: NextRequest) {
           message: "Validation error",
           errors: validationResult.error.format(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -93,13 +92,13 @@ export async function POST(req: NextRequest) {
         message: "Contact created successfully",
         contact,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error: unknown) {
     console.error("Contact creation error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -112,7 +111,7 @@ export async function GET(req: NextRequest) {
     if (!session || !session.user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -128,13 +127,13 @@ export async function GET(req: NextRequest) {
         success: true,
         contacts,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Get contacts error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -147,7 +146,7 @@ export async function PUT(req: NextRequest) {
     if (!session || !session.user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -165,7 +164,7 @@ export async function PUT(req: NextRequest) {
           message: "Validation error",
           errors: validationResult.error.format(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -175,13 +174,13 @@ export async function PUT(req: NextRequest) {
     const contact = await Contact.findByIdAndUpdate(
       id,
       { status },
-      { new: true }
+      { new: true },
     );
 
     if (!contact) {
       return NextResponse.json(
         { success: false, message: "Contact not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -192,13 +191,13 @@ export async function PUT(req: NextRequest) {
         message: "Contact updated successfully",
         contact,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Update contact error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -211,7 +210,7 @@ export async function DELETE(req: NextRequest) {
     if (!session || !session.user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -225,7 +224,7 @@ export async function DELETE(req: NextRequest) {
     if (!id) {
       return NextResponse.json(
         { success: false, message: "Contact ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -235,7 +234,7 @@ export async function DELETE(req: NextRequest) {
     if (!contact) {
       return NextResponse.json(
         { success: false, message: "Contact not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -245,13 +244,13 @@ export async function DELETE(req: NextRequest) {
         success: true,
         message: "Contact deleted successfully",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Delete contact error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

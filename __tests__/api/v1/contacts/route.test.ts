@@ -5,7 +5,9 @@ import jwt from "jsonwebtoken";
 
 // Mock the NextAuth middleware
 jest.mock("next-auth", () => ({
-  auth: jest.fn(() => Promise.resolve({ user: { isAdmin: true, id: "admin-id" } })),
+  auth: jest.fn(() =>
+    Promise.resolve({ user: { isAdmin: true, id: "admin-id" } }),
+  ),
 }));
 
 // Mock the database connection
@@ -21,12 +23,12 @@ jest.mock("nodemailer", () => ({
 // Skip this test suite for now as it requires more complex mocking for Next.js API routes
 describe.skip("Contacts API", () => {
   let mongoServer: MongoMemoryServer;
-  
+
   beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
     const uri = mongoServer.getUri();
     await mongoose.connect(uri);
-    
+
     // Mock environment variables
     process.env.EMAIL_USER = "test@example.com";
     process.env.EMAIL_PASS = "test-password";

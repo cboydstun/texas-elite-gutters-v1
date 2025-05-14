@@ -104,7 +104,7 @@ export const FAQTable = ({
     const hash = category.split("").reduce((acc, char) => {
       return char.charCodeAt(0) + ((acc << 5) - acc);
     }, 0);
-    
+
     const colors = [
       "bg-blue-100 text-blue-800",
       "bg-green-100 text-green-800",
@@ -114,7 +114,7 @@ export const FAQTable = ({
       "bg-purple-100 text-purple-800",
       "bg-pink-100 text-pink-800",
     ];
-    
+
     return colors[Math.abs(hash) % colors.length];
   };
 
@@ -174,7 +174,7 @@ export const FAQTable = ({
               <td className="px-6 py-4 whitespace-nowrap">
                 <span
                   className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getCategoryBadgeClass(
-                    faq.category
+                    faq.category,
                   )}`}
                 >
                   {faq.category}
@@ -185,7 +185,9 @@ export const FAQTable = ({
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <button
-                  onClick={() => handleTogglePublished(faq._id.toString(), faq.isPublished)}
+                  onClick={() =>
+                    handleTogglePublished(faq._id.toString(), faq.isPublished)
+                  }
                   disabled={isLoading[faq._id.toString()]}
                   className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                     faq.isPublished
@@ -235,9 +237,7 @@ export const FAQTable = ({
                           disabled={isLoading[faq._id.toString()]}
                           className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700"
                         >
-                          {isLoading[faq._id.toString()]
-                            ? "Saving..."
-                            : "Save"}
+                          {isLoading[faq._id.toString()] ? "Saving..." : "Save"}
                         </button>
                         <button
                           onClick={cancelEdit}
@@ -337,36 +337,46 @@ export const FAQTable = ({
                 ) : (
                   <>
                     <div className="mb-4">
-                      <h4 className="text-md font-medium text-gray-700">Question:</h4>
+                      <h4 className="text-md font-medium text-gray-700">
+                        Question:
+                      </h4>
                       <div className="bg-white p-4 rounded-lg border border-gray-200 mt-2">
                         <p className="text-gray-700">{faq.question}</p>
                       </div>
                     </div>
-                    
+
                     <div className="mb-4">
-                      <h4 className="text-md font-medium text-gray-700">Answer:</h4>
+                      <h4 className="text-md font-medium text-gray-700">
+                        Answer:
+                      </h4>
                       <div className="bg-white p-4 rounded-lg border border-gray-200 mt-2">
-                        <p className="text-gray-700 whitespace-pre-wrap">{faq.answer}</p>
+                        <p className="text-gray-700 whitespace-pre-wrap">
+                          {faq.answer}
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
-                        <h4 className="text-sm font-medium text-gray-700">Category:</h4>
+                        <h4 className="text-sm font-medium text-gray-700">
+                          Category:
+                        </h4>
                         <span
                           className={`mt-1 px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getCategoryBadgeClass(
-                            faq.category
+                            faq.category,
                           )}`}
                         >
                           {faq.category}
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-gray-700">Display Order:</h4>
+                        <h4 className="text-sm font-medium text-gray-700">
+                          Display Order:
+                        </h4>
                         <p className="text-gray-600">{faq.order}</p>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4 text-sm text-gray-500">
                       <p>
                         <strong>Created:</strong>{" "}

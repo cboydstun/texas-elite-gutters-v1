@@ -40,7 +40,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
     setIsSubmitting(true);
     setSubmitSuccess(false);
     setSubmitError(null);
-    
+
     try {
       // Call the API endpoint
       const response = await fetch("/api/v1/contacts", {
@@ -60,14 +60,16 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
       // Reset the form on success
       reset();
       setSubmitSuccess(true);
-      
+
       // Call the onSubmit prop if provided (for testing/custom handling)
       if (onSubmit) {
         onSubmit(data);
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitError(error instanceof Error ? error.message : "An unknown error occurred");
+      setSubmitError(
+        error instanceof Error ? error.message : "An unknown error occurred",
+      );
     } finally {
       setIsSubmitting(false);
     }

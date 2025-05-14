@@ -5,7 +5,7 @@ export enum ReviewSource {
   INSTAGRAM = "Instagram",
   WEBSITE = "Website",
   YOUTUBE = "YouTube",
-  OTHER = "Other"
+  OTHER = "Other",
 }
 
 export interface ReviewData {

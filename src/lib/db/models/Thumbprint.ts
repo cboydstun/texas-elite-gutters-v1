@@ -46,24 +46,24 @@ const ThumbprintSchema = new Schema<IThumbprint>({
   fingerprintHash: {
     type: String,
     required: true,
-    index: true
+    index: true,
   },
   components: {
     type: Object,
-    required: true
+    required: true,
   },
   userAgent: {
     type: String,
-    index: true
+    index: true,
   },
   device: {
     type: {
       type: String,
-      enum: ['desktop', 'tablet', 'mobile', 'other'],
-      index: true
+      enum: ["desktop", "tablet", "mobile", "other"],
+      index: true,
     },
     brand: String,
-    model: String
+    model: String,
   },
   location: {
     country: String,
@@ -71,51 +71,54 @@ const ThumbprintSchema = new Schema<IThumbprint>({
     city: String,
     coordinates: {
       latitude: Number,
-      longitude: Number
-    }
+      longitude: Number,
+    },
   },
-  visits: [{
-    timestamp: Date,
-    page: String,
-    duration: Number,
-    referrer: String,
-    exitPage: String,
-    interactions: {
-      clicks: Number,
-      scrollDepth: Number,
-      formInteractions: Boolean
-    }
-  }],
+  visits: [
+    {
+      timestamp: Date,
+      page: String,
+      duration: Number,
+      referrer: String,
+      exitPage: String,
+      interactions: {
+        clicks: Number,
+        scrollDepth: Number,
+        formInteractions: Boolean,
+      },
+    },
+  ],
   firstSeen: {
     type: Date,
     default: Date.now,
-    index: true
+    index: true,
   },
   lastSeen: {
     type: Date,
     default: Date.now,
-    index: true
+    index: true,
   },
   visitCount: {
     type: Number,
     default: 1,
-    index: true
+    index: true,
   },
   conversion: {
     hasConverted: {
       type: Boolean,
       default: false,
-      index: true
+      index: true,
     },
     conversionDate: Date,
     conversionValue: Number,
-    conversionType: String
+    conversionType: String,
   },
   segments: {
     type: [String],
-    index: true
-  }
+    index: true,
+  },
 });
 
-export const Thumbprint = mongoose.models.Thumbprint || 
+export const Thumbprint =
+  mongoose.models.Thumbprint ||
   mongoose.model<IThumbprint>("Thumbprint", ThumbprintSchema);

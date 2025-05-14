@@ -8,34 +8,49 @@ import { ReviewSource } from "@/lib/types/ReviewTypes";
 // Review schema for validation
 const reviewSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
-  rating: z.number().min(1, { message: "Rating must be at least 1" }).max(5, { message: "Rating cannot be more than 5" }),
+  rating: z
+    .number()
+    .min(1, { message: "Rating must be at least 1" })
+    .max(5, { message: "Rating cannot be more than 5" }),
   comment: z.string().min(1, { message: "Comment is required" }),
-  source: z.enum([
-    ReviewSource.GOOGLE,
-    ReviewSource.YELP,
-    ReviewSource.FACEBOOK,
-    ReviewSource.INSTAGRAM,
-    ReviewSource.WEBSITE,
-    ReviewSource.YOUTUBE,
-    ReviewSource.OTHER
-  ], { message: "Invalid review source" }),
+  source: z.enum(
+    [
+      ReviewSource.GOOGLE,
+      ReviewSource.YELP,
+      ReviewSource.FACEBOOK,
+      ReviewSource.INSTAGRAM,
+      ReviewSource.WEBSITE,
+      ReviewSource.YOUTUBE,
+      ReviewSource.OTHER,
+    ],
+    { message: "Invalid review source" },
+  ),
 });
 
 // Update review schema
 const updateReviewSchema = z.object({
   id: z.string().min(1, { message: "Review ID is required" }),
   name: z.string().min(1, { message: "Name is required" }).optional(),
-  rating: z.number().min(1, { message: "Rating must be at least 1" }).max(5, { message: "Rating cannot be more than 5" }).optional(),
+  rating: z
+    .number()
+    .min(1, { message: "Rating must be at least 1" })
+    .max(5, { message: "Rating cannot be more than 5" })
+    .optional(),
   comment: z.string().min(1, { message: "Comment is required" }).optional(),
-  source: z.enum([
-    ReviewSource.GOOGLE,
-    ReviewSource.YELP,
-    ReviewSource.FACEBOOK,
-    ReviewSource.INSTAGRAM,
-    ReviewSource.WEBSITE,
-    ReviewSource.YOUTUBE,
-    ReviewSource.OTHER
-  ], { message: "Invalid review source" }).optional(),
+  source: z
+    .enum(
+      [
+        ReviewSource.GOOGLE,
+        ReviewSource.YELP,
+        ReviewSource.FACEBOOK,
+        ReviewSource.INSTAGRAM,
+        ReviewSource.WEBSITE,
+        ReviewSource.YOUTUBE,
+        ReviewSource.OTHER,
+      ],
+      { message: "Invalid review source" },
+    )
+    .optional(),
 });
 
 // GET /api/v1/reviews - Get all reviews or a specific review by ID
@@ -55,7 +70,7 @@ export async function GET(req: NextRequest) {
       if (!review) {
         return NextResponse.json(
           { success: false, message: "Review not found" },
-          { status: 404 }
+          { status: 404 },
         );
       }
 
@@ -64,7 +79,7 @@ export async function GET(req: NextRequest) {
           success: true,
           review,
         },
-        { status: 200 }
+        { status: 200 },
       );
     } else {
       // Get all reviews
@@ -75,14 +90,14 @@ export async function GET(req: NextRequest) {
           success: true,
           reviews,
         },
-        { status: 200 }
+        { status: 200 },
       );
     }
   } catch (error: unknown) {
     console.error("Get reviews error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -104,7 +119,7 @@ export async function POST(req: NextRequest) {
           message: "Validation error",
           errors: validationResult.error.format(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -125,13 +140,13 @@ export async function POST(req: NextRequest) {
         message: "Review created successfully",
         review,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error: unknown) {
     console.error("Review creation error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -144,7 +159,7 @@ export async function PUT(req: NextRequest) {
     if (!session || !session.user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -162,23 +177,21 @@ export async function PUT(req: NextRequest) {
           message: "Validation error",
           errors: validationResult.error.format(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const { id, ...updateData } = validationResult.data;
 
     // Update review
-    const review = await Review.findByIdAndUpdate(
-      id,
-      updateData,
-      { new: true }
-    );
+    const review = await Review.findByIdAndUpdate(id, updateData, {
+      new: true,
+    });
 
     if (!review) {
       return NextResponse.json(
         { success: false, message: "Review not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -189,13 +202,13 @@ export async function PUT(req: NextRequest) {
         message: "Review updated successfully",
         review,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Update review error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -208,7 +221,7 @@ export async function DELETE(req: NextRequest) {
     if (!session || !session.user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -222,7 +235,7 @@ export async function DELETE(req: NextRequest) {
     if (!id) {
       return NextResponse.json(
         { success: false, message: "Review ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -232,7 +245,7 @@ export async function DELETE(req: NextRequest) {
     if (!review) {
       return NextResponse.json(
         { success: false, message: "Review not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -242,13 +255,13 @@ export async function DELETE(req: NextRequest) {
         success: true,
         message: "Review deleted successfully",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Delete review error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

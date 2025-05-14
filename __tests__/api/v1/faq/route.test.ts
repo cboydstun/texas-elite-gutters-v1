@@ -4,7 +4,9 @@ import { FAQ } from "@/lib/db/models/FAQ";
 
 // Mock the NextAuth middleware
 jest.mock("next-auth", () => ({
-  auth: jest.fn(() => Promise.resolve({ user: { isAdmin: true, id: "admin-id" } })),
+  auth: jest.fn(() =>
+    Promise.resolve({ user: { isAdmin: true, id: "admin-id" } }),
+  ),
 }));
 
 // Mock the database connection
@@ -29,12 +31,12 @@ jest.mock("@/lib/db/models/FAQ", () => {
 // Skip this test suite for now as it requires more complex mocking for Next.js API routes
 describe.skip("FAQ API", () => {
   let mongoServer: MongoMemoryServer;
-  
+
   beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
     const uri = mongoServer.getUri();
     await mongoose.connect(uri);
-    
+
     // Mock environment variables
     process.env.AUTH_SECRET = "test-secret";
   });
@@ -47,9 +49,12 @@ describe.skip("FAQ API", () => {
   beforeEach(async () => {
     // Reset all mocks
     jest.clearAllMocks();
-    
+
     // Mock deleteMany to resolve
-    (FAQ.deleteMany as jest.Mock).mockResolvedValue({ acknowledged: true, deletedCount: 0 });
+    (FAQ.deleteMany as jest.Mock).mockResolvedValue({
+      acknowledged: true,
+      deletedCount: 0,
+    });
   });
 
   it("should be implemented with proper Next.js API route testing", () => {

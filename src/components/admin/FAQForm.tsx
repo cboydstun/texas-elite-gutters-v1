@@ -18,10 +18,10 @@ export default function FAQForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value, type } = e.target;
-    
+
     if (type === "checkbox") {
       const target = e.target as HTMLInputElement;
       setFormData((prev) => ({
@@ -183,7 +183,7 @@ export default function FAQForm() {
             id="isPublished"
             name="isPublished"
             checked={formData.isPublished}
-            onChange={(e) => 
+            onChange={(e) =>
               setFormData({ ...formData, isPublished: e.target.checked })
             }
             className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"

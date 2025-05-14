@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  images: {
+    // Disable image optimization to bypass Vercel's limits
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

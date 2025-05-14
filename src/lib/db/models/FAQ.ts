@@ -36,7 +36,8 @@ const FAQSchema = new Schema<IFAQ>(
       default: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-export const FAQ = mongoose.models.FAQ || mongoose.model<IFAQ>("FAQ", FAQSchema);
+export const FAQ =
+  mongoose.models.FAQ || mongoose.model<IFAQ>("FAQ", FAQSchema);

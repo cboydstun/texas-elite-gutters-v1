@@ -34,7 +34,7 @@ const ReviewSchema = new Schema<IReview>(
       required: [true, "Source is required"],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const Review =

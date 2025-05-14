@@ -70,10 +70,8 @@ export default function ContactsPage() {
         // Update the contact in the local state
         setContacts((prevContacts) =>
           prevContacts.map((contact) =>
-            contact._id.toString() === id
-              ? { ...contact, status }
-              : contact
-          )
+            contact._id.toString() === id ? { ...contact, status } : contact,
+          ),
         );
       } else {
         throw new Error(data.message || "Failed to update contact");
@@ -83,7 +81,7 @@ export default function ContactsPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while updating the contact"
+          : "An error occurred while updating the contact",
       );
     }
   };
@@ -103,7 +101,7 @@ export default function ContactsPage() {
       if (data.success) {
         // Remove the contact from the local state
         setContacts((prevContacts) =>
-          prevContacts.filter((contact) => contact._id.toString() !== id)
+          prevContacts.filter((contact) => contact._id.toString() !== id),
         );
       } else {
         throw new Error(data.message || "Failed to delete contact");
@@ -113,7 +111,7 @@ export default function ContactsPage() {
       alert(
         err instanceof Error
           ? err.message
-          : "An error occurred while deleting the contact"
+          : "An error occurred while deleting the contact",
       );
     }
   };
@@ -126,7 +124,9 @@ export default function ContactsPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Contact Submissions</h1>
+        <h1 className="text-2xl font-bold text-gray-900">
+          Contact Submissions
+        </h1>
         <button
           onClick={fetchContacts}
           disabled={isLoading}

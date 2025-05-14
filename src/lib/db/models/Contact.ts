@@ -40,7 +40,7 @@ const ContactSchema = new Schema<IContact>(
       default: "new",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const Contact =

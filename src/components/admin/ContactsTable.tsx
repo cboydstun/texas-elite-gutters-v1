@@ -143,7 +143,7 @@ export const ContactsTable = ({
               <td className="px-6 py-4 whitespace-nowrap">
                 <span
                   className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadgeClass(
-                    contact.status
+                    contact.status,
                   )}`}
                 >
                   {contact.status.charAt(0).toUpperCase() +
@@ -158,9 +158,7 @@ export const ContactsTable = ({
                   onClick={() => toggleExpand(contact._id.toString())}
                   className="text-indigo-600 hover:text-indigo-900 mr-3"
                 >
-                  {expandedContact === contact._id.toString()
-                    ? "Hide"
-                    : "View"}
+                  {expandedContact === contact._id.toString() ? "Hide" : "View"}
                 </button>
                 <button
                   onClick={() => handleDelete(contact._id.toString())}
@@ -192,7 +190,7 @@ export const ContactsTable = ({
                       onChange={(e) =>
                         handleStatusChange(
                           contact._id.toString(),
-                          e.target.value
+                          e.target.value,
                         )
                       }
                       disabled={isLoading[contact._id.toString()]}

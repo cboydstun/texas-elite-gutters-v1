@@ -57,8 +57,8 @@ export default function GutterInstallation() {
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl text-white drop-shadow-md">
               Durable, low-maintenance gutters custom-fit to your home in San
-              Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and surrounding areas
-
+              Antonio, New Braunfels, Cibolo, Seguin, Boerne, Helotes, and
+              surrounding areas
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
@@ -86,11 +86,11 @@ export default function GutterInstallation() {
                 <p className="text-lg mb-6 leading-relaxed">
                   Having a reliable, durable gutter system is vital to the
                   protection of your home's exterior and interior. If you have a
-                  clogged, leaky, or poorly maintained gutter system in place, it
-                  can lead to serious water damage around your roof, siding,
+                  clogged, leaky, or poorly maintained gutter system in place,
+                  it can lead to serious water damage around your roof, siding,
                   basement, foundation, and more. Plus, an open, unkept gutter
-                  system can be a breeding ground for pests, dirt, leaves, and other
-                  outdoor debris.
+                  system can be a breeding ground for pests, dirt, leaves, and
+                  other outdoor debris.
                 </p>
               </div>
               <div className="w-full md:w-1/2 max-w-md">
@@ -138,7 +138,6 @@ export default function GutterInstallation() {
               in and around your property. Unfortunately, homeowners don't often
               think about the integrity of their gutter system until there is a
               problem.
-
             </p>
             <p className="text-lg mb-6 leading-relaxed">
               If your gutters are loose, clogged, or aren't securely attached to
@@ -219,7 +218,9 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Attracts pests like mosquitoes, roaches, ants, termites, and even rodents due to standing water and moisture-damaged wood around your home
+                  Attracts pests like mosquitoes, roaches, ants, termites, and
+                  even rodents due to standing water and moisture-damaged wood
+                  around your home
                 </span>
               </li>
               <li className="flex items-start">
@@ -237,8 +238,8 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Soil erosion around your home's foundation caused by uncontrolled water runoff
-
+                  Soil erosion around your home's foundation caused by
+                  uncontrolled water runoff
                 </span>
               </li>
               <li className="flex items-start">
@@ -256,8 +257,8 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Staining and discoloration of siding, brick, or stucco from constant water exposure
-
+                  Staining and discoloration of siding, brick, or stucco from
+                  constant water exposure
                 </span>
               </li>
               <li className="flex items-start">
@@ -275,8 +276,8 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Foundation settling and structural shifts over time from chronic water pooling
-
+                  Foundation settling and structural shifts over time from
+                  chronic water pooling
                 </span>
               </li>
               <li className="flex items-start">
@@ -294,7 +295,8 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Increased home maintenance costs due to long-term water damage and pest issues
+                  Increased home maintenance costs due to long-term water damage
+                  and pest issues
                 </span>
               </li>
               <li className="flex items-start">
@@ -312,8 +314,8 @@ export default function GutterInstallation() {
                   />
                 </svg>
                 <span className="text-lg">
-                  Decreased curb appeal and property value caused by visible gutter overflow, stains, and water damage
-
+                  Decreased curb appeal and property value caused by visible
+                  gutter overflow, stains, and water damage
                 </span>
               </li>
             </ul>
@@ -462,9 +464,9 @@ export default function GutterInstallation() {
             </ul>
             <p className="text-lg mb-6 leading-relaxed">
               When you choose Texas Elite Gutters & Exteriors, we'll provide a
-              free onsite project evaluation for gutter installation on your property. Our
-              gutters come with a lifetime warranty and are guaranteed to sag.
-
+              free onsite project evaluation for gutter installation on your
+              property. Our gutters come with a lifetime warranty and are
+              guaranteed to sag.
             </p>
             <div className="text-center mt-8">
               <Link
@@ -473,7 +475,6 @@ export default function GutterInstallation() {
               >
                 <Button variant="primary" className="px-8 py-3 shadow-lg">
                   Schedule Your Free Project Evaluation
-
                 </Button>
               </Link>
             </div>
@@ -489,11 +490,10 @@ export default function GutterInstallation() {
             Protect Your Home with Quality Gutters
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Schedule your free onsite project evaluation for gutter installation today
-
-            with one of our professional gutter specialists. You'll receive an
-            in-person evaluation of your existing gutter system and discuss
-            options that would best suit your home.
+            Schedule your free onsite project evaluation for gutter installation
+            today with one of our professional gutter specialists. You'll
+            receive an in-person evaluation of your existing gutter system and
+            discuss options that would best suit your home.
           </p>
           <Link
             href="https://book.housecallpro.com/book/Texas-Elite-Gutters--Exteriors/f0824bdbed0a420caec0e991163d1246?v2=true"

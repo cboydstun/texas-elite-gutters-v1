@@ -95,7 +95,7 @@ describe("Review Model", () => {
     await expect(Review.create(invalidLowRating)).rejects.toThrow();
     await expect(Review.create(invalidHighRating)).rejects.toThrow();
   });
-  
+
   it("should validate source is from allowed enum values", async () => {
     const reviewData = {
       name: "John Doe",

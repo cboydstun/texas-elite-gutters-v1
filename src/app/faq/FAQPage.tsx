@@ -43,7 +43,7 @@ export default function FAQPage() {
       if (data.success) {
         // Only show published FAQs
         const publishedFaqs = data.faqs.filter((faq: FAQ) => faq.isPublished);
-        
+
         // Sort by order and then by category
         publishedFaqs.sort((a: FAQ, b: FAQ) => {
           if (a.category !== b.category) {
@@ -51,12 +51,12 @@ export default function FAQPage() {
           }
           return a.order - b.order;
         });
-        
+
         setFaqs(publishedFaqs);
-        
+
         // Extract unique categories
         const uniqueCategories = Array.from(
-          new Set(publishedFaqs.map((faq: FAQ) => faq.category))
+          new Set(publishedFaqs.map((faq: FAQ) => faq.category)),
         );
         setCategories(uniqueCategories as string[]);
       } else {
@@ -81,13 +81,16 @@ export default function FAQPage() {
     : faqs;
 
   // Group FAQs by category
-  const faqsByCategory = filteredFaqs.reduce((acc, faq) => {
-    if (!acc[faq.category]) {
-      acc[faq.category] = [];
-    }
-    acc[faq.category].push(faq);
-    return acc;
-  }, {} as Record<string, FAQ[]>);
+  const faqsByCategory = filteredFaqs.reduce(
+    (acc, faq) => {
+      if (!acc[faq.category]) {
+        acc[faq.category] = [];
+      }
+      acc[faq.category].push(faq);
+      return acc;
+    },
+    {} as Record<string, FAQ[]>,
+  );
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -97,7 +100,8 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-gray-300 text-center mt-4 max-w-2xl mx-auto">
-            Find answers to common questions about our gutter installation, repair, and maintenance services.
+            Find answers to common questions about our gutter installation,
+            repair, and maintenance services.
           </p>
         </div>
       </div>
@@ -171,43 +175,49 @@ export default function FAQPage() {
               </div>
             ) : (
               <div className="space-y-8">
-                {Object.entries(faqsByCategory).map(([category, categoryFaqs]) => (
-                  <div key={category} className="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div className="bg-[#001F33] px-6 py-4">
-                      <h2 className="text-xl font-bold text-white">{category}</h2>
+                {Object.entries(faqsByCategory).map(
+                  ([category, categoryFaqs]) => (
+                    <div
+                      key={category}
+                      className="bg-white rounded-lg shadow-md overflow-hidden"
+                    >
+                      <div className="bg-[#001F33] px-6 py-4">
+                        <h2 className="text-xl font-bold text-white">
+                          {category}
+                        </h2>
+                      </div>
+                      <div className="divide-y divide-gray-200">
+                        {categoryFaqs.map((faq) => (
+                          <details key={faq._id.toString()} className="group">
+                            <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                              <span className="text-gray-900">
+                                {faq.question}
+                              </span>
+                              <span className="transition group-open:rotate-180">
+                                <svg
+                                  fill="none"
+                                  height="24"
+                                  shapeRendering="geometricPrecision"
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="1.5"
+                                  viewBox="0 0 24 24"
+                                  width="24"
+                                >
+                                  <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                              </span>
+                            </summary>
+                            <div className="px-6 pb-6 pt-0 text-gray-700 whitespace-pre-wrap">
+                              {faq.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
                     </div>
-                    <div className="divide-y divide-gray-200">
-                      {categoryFaqs.map((faq) => (
-                        <details
-                          key={faq._id.toString()}
-                          className="group"
-                        >
-                          <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-6">
-                            <span className="text-gray-900">{faq.question}</span>
-                            <span className="transition group-open:rotate-180">
-                              <svg
-                                fill="none"
-                                height="24"
-                                shapeRendering="geometricPrecision"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                                viewBox="0 0 24 24"
-                                width="24"
-                              >
-                                <path d="M6 9l6 6 6-6"></path>
-                              </svg>
-                            </span>
-                          </summary>
-                          <div className="px-6 pb-6 pt-0 text-gray-700 whitespace-pre-wrap">
-                            {faq.answer}
-                          </div>
-                        </details>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  ),
+                )}
               </div>
             )}
 
@@ -217,7 +227,8 @@ export default function FAQPage() {
                 Still have questions?
               </h2>
               <p className="text-gray-300 mb-6">
-                We're here to help. Contact our team for personalized assistance.
+                We're here to help. Contact our team for personalized
+                assistance.
               </p>
               <Link
                 href="/contact"
