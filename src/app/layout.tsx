@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar, Footer } from "@/components/layout";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import ThumbmarkScript from "@/components/analytics/ThumbmarkScript";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import AnalyticsWrapper from "@/components/analytics/AnalyticsWrapper";
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThumbmarkScript />
+      <GoogleAnalytics />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
