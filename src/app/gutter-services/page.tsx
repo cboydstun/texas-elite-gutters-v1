@@ -158,7 +158,7 @@ export default function GutterServices() {
                 </div>
                 <div className="w-full md:w-1/2 max-w-md">
                   <Image
-                    src="/IMG_3302-min.png"
+                    src="/images/IMG_3302-min.png"
                     alt="Professional gutter cleaning service"
                     width={500}
                     height={400}

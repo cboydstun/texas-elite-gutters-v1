@@ -168,7 +168,7 @@ export default function ExteriorServices() {
                 </div>
                 <div className="w-full md:w-1/2 max-w-md">
                   <Image
-                    src="/IMG_3393-min.jpg"
+                    src="/images/IMG_3393-min.jpg"
                     alt="Professional exterior painting service"
                     width={500}
                     height={400}

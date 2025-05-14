@@ -95,7 +95,7 @@ export default function GutterInstallation() {
               </div>
               <div className="w-full md:w-1/2 max-w-md">
                 <Image
-                  src="/IMG_2901-min.png"
+                  src="/images/IMG_2901-min.png"
                   alt="Seamless gutter installation"
                   width={500}
                   height={400}

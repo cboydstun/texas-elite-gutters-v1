@@ -82,7 +82,7 @@ export default function Home() {
             <div className="w-full md:w-1/2 max-w-lg relative">
               <Image
                 src="/images/oscar_ladder_3.png"
-                alt="Client on ladder performing gutter service"
+                alt="Professional on ladder performing gutter service"
                 width={500}
                 height={600}
                 className="rounded-lg shadow-lg mx-auto"
