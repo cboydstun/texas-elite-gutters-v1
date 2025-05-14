@@ -62,6 +62,24 @@ describe("Navbar", () => {
     expect(mobileMenu).toHaveClass("hidden");
   });
 
+  it("renders a styled hamburger menu icon", () => {
+    render(<Navbar />);
+
+    // Get the hamburger button
+    const menuButton = screen.getByLabelText(/toggle menu/i);
+
+    // Find the SVG element inside the button
+    const svgIcon = menuButton.querySelector("svg");
+    expect(svgIcon).toBeInTheDocument();
+
+    // Check that the SVG has the larger size classes
+    expect(svgIcon).toHaveClass("h-8");
+    expect(svgIcon).toHaveClass("w-8");
+
+    // Check for styling classes
+    expect(svgIcon).toHaveClass("text-[#C9A357]");
+  });
+
   it("displays contact phone number", () => {
     render(<Navbar />);
 

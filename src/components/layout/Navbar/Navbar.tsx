@@ -90,13 +90,13 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="text-[#FFFFFF]"
+            className="text-[#C9A357] p-2 rounded-md hover:bg-[#001F33] transition-colors"
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-8 w-8"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

@@ -405,6 +405,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service Commitment Section */}
+      <section className="w-full bg-white py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold mb-8 text-center text-[#C9A357]">
+            Your Trusted Gutter Service Provider
+          </h3>
+          <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto">
+            <div className="w-full md:w-2/3 md:pr-12">
+              <p className="text-lg mb-6 leading-relaxed">
+                We strive to be the premier gutter contractor serving all your
+                needs across San Antonio, Cibolo, New Braunfels, Seguin, and
+                surrounding Texas communities. Our commitment to excellence is
+                built on investing in our team members, ensuring they have the
+                skills and resources to deliver consistently outstanding results
+                for every project.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                Transparency is at the heart of our business philosophy. We
+                publish every customer review—whether glowing or
+                critical—because we believe in accountability and continuous
+                improvement. This approach not only keeps us honest but also
+                helps us identify opportunities to enhance our service quality.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                Our dedication to quality workmanship and exceptional customer
+                service has built a loyal client base throughout the region.
+                Many of our new customers come through referrals from satisfied
+                homeowners who appreciate our integrity, attention to detail,
+                and commitment to doing the job right the first time.
+              </p>
+            </div>
+            <div className="w-full md:w-1/3 flex justify-center items-center mt-8 md:mt-0">
+              <div className="relative w-96 h-96">
+                <Image
+                  src="/images/BCC_Member_Badge_1_.png"
+                  alt="Better Business Bureau Member"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="w-full bg-[#001F33] text-[#FFFFFF] py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#001F33] to-[#003A5C] opacity-80"></div>
